@@ -15,9 +15,8 @@ public class WebConfig implements WebMvcConfigurer {
                         "/order.html",       // HTML page
                         "/order",            // Form submit POST path
                         "/css/**", "/js/**", "/images/**", "/static/**"
-                ); // Allow static files
-    }
-
+                );
+}
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("/**")

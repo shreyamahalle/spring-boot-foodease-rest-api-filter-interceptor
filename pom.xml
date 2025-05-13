@@ -16,13 +16,11 @@
 
     <properties>
         <java.version>21</java.version>
-        <spring-boot.version>3.4.5</spring-boot.version>
     </properties>
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
-
 
             <!--            tomcat exclusions-->
             <exclusions>

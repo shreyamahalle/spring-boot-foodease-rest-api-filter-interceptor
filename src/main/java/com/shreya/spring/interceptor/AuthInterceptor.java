@@ -11,12 +11,10 @@ public class AuthInterceptor implements HandlerInterceptor {
     private static final Logger logger = LoggerFactory.getLogger(AuthInterceptor.class);
 
     @Override
-    public boolean preHandle(HttpServletRequest request,
-                             HttpServletResponse response,
-                             Object handler) throws Exception {
-        logger.info("🔐 Interceptor - PreHandle: {}", request.getRequestURI());
+    public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
+        logger.info("Interceptor - PreHandle: {}", request.getRequestURI());
 
-        // 🔐 Auth/token validation logic starts here
+        // Auth/token validation logic starts here
         String authHeader = request.getHeader("Authorization");
 
         if (authHeader == null || !authHeader.startsWith("Bearer ")) {
@@ -26,7 +24,7 @@ public class AuthInterceptor implements HandlerInterceptor {
             return false;
         }
 
-        String token = authHeader.substring(7); // Removes "Bearer "
+        String token = authHeader.substring(7);
         if (!token.equals("mysecrettoken")) {
             logger.warn("Invalid token: {}", token);
             response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
@@ -34,7 +32,7 @@ public class AuthInterceptor implements HandlerInterceptor {
             return false;
         }
 
-        logger.info("✅ Token validated successfully");
+        logger.info("Token validated successfully");
         return true;
     }
 }

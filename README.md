@@ -29,6 +29,26 @@ Spring Framework (XML-based configuration only) and applies solid Object-Oriente
 
 > **Use case**: A food ordering platform where customers can register, explore nearby restaurants, place orders, and get deliveries from available agents based on location and serviceability.
 
+## Advanced Features
+
+### Filters & Interceptors
+1. **Request Logging Filter**: Logs all incoming requests
+2. **Authentication Filter**: JWT validation for secure endpoints
+3. **Response Time Interceptor**: Measures API response times
+4. **Request Validation Interceptor**: Validates payloads before controller processing
+
+### Scheduled Tasks
+1. **Daily Sales Report**: Generated at midnight
+2. **Order Status Updates**: Hourly checks for pending orders
+3. **Promotion Engine**: Weekly coupon generation
+
+### Email Service
+- Order confirmation emails
+- Delivery status updates
+- Password reset functionality
+- Promotional campaigns
+
+
 ## Introduction
 
 ## Project Overview

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Customer Form</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <h1>Customer Information</h1>
+    <form action="/submit" class="customer-form" method="POST">
+        <div class="form-group">
+            <label for="id">ID:</label>
+            <input id="id" name="id" required type="number">
+        </div>
+
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input id="name" name="name" required type="text">
+        </div>
+
+        <div class="form-group">
+            <label for="city">City:</label>
+            <input id="city" name="city" required type="text">
+        </div>
+
+        <div class="form-group">
+            <label for="mobileNo">Mobile No:</label>
+            <input id="mobileNo" name="mobileNo" required type="number">
+        </div>
+
+        <div class="form-group">
+            <label for="age">Age:</label>
+            <input id="age" name="age" required type="number">
+        </div>
+
+        <label>
+            <input id="notRobot" name="notRobot" required type="checkbox">
+            I'm not a robot
+        </label><br><br>
+        <div class="form-actions">
+            <input type="submit" value="Submit">
+            <input type="reset" value="Clear">
+        </div>
+    </form>
+</div>
+</body>
+</html>

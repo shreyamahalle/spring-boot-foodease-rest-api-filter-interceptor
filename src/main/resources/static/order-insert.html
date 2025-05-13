@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Order Form</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+<h1>Order Information</h1>
+<form action="/submit" method="POST">
+    <label for="id">Order ID:</label>
+    <input id="id" name="id" required type="number"><br><br>
+
+    <label for="type">Order Type:</label>
+    <input id="type" name="type" required type="text"><br><br>
+
+    <label for="note">Note:</label>
+    <textarea cols="50" id="note" name="note" rows="4"></textarea><br><br>
+
+    <label for="paymentMethod">Payment Method:</label>
+    <select id="paymentMethod" name="paymentMethod" required>
+        <option value="creditCard">Credit Card</option>
+        <option value="debitCard">Debit Card</option>
+        <option value="paypal">PayPal</option>
+        <option value="cashOnDelivery">Cash on Delivery</option>
+    </select><br><br>
+
+    <input type="submit" value="Submit">
+    <input type="reset" value="Clear">
+
+</form>
+</body>
+</html>

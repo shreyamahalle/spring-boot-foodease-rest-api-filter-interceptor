@@ -1,3 +1,6 @@
+<p align="center">
+  <img src="https://raw.githubusercontent.com/shreyamahalle/com.shreya.spring/main/resources/static/img.png" alt="FoodEase Logo" width="300">
+</p>
 # spring-boot-foodease-rest-api-filter-interceptor
 spring-boot-foodease-rest-api-filter-interceptor
 

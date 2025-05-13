@@ -1,6 +1,10 @@
+<<<<<<< HEAD
 <p align="center">
   <img src="https://raw.githubusercontent.com/shreyamahalle/com.shreya.spring/main/resources/static/img.png" alt="FoodEase Logo" width="300">
 </p>
+=======
+[FoodEase Logo](https://via.placeholder.com/150)
+>>>>>>> 3c2e55b44e67f12234925d1a645d887848bf5785
 # spring-boot-foodease-rest-api-filter-interceptor
 spring-boot-foodease-rest-api-filter-interceptor
 
@@ -31,6 +35,26 @@ Spring Framework (XML-based configuration only) and applies solid Object-Oriente
 
 > **Use case**: A food ordering platform where customers can register, explore nearby restaurants, place orders, and get deliveries from available agents based on location and serviceability.
 
+## Advanced Features
+
+### Filters & Interceptors
+1. **Request Logging Filter**: Logs all incoming requests
+2. **Authentication Filter**: JWT validation for secure endpoints
+3. **Response Time Interceptor**: Measures API response times
+4. **Request Validation Interceptor**: Validates payloads before controller processing
+
+### Scheduled Tasks
+1. **Daily Sales Report**: Generated at midnight
+2. **Order Status Updates**: Hourly checks for pending orders
+3. **Promotion Engine**: Weekly coupon generation
+
+### Email Service
+- Order confirmation emails
+- Delivery status updates
+- Password reset functionality
+- Promotional campaigns
+
+
 ## Introduction
 
 ## Project Overview
@@ -49,6 +73,10 @@ The Spring Booking Management System provides a modular approach to managing:
 - BookingTable
 - Payment
 - Orderstatus
+- Request Filtering
+- **API Interception**
+- **Scheduled Jobs**
+- **Email Notifications**
 
 It mimics real-world operations like customer registration, restaurant assignment, order placing, and delivery
 tracking — all managed using a clean layered architecture (Controller → Service → Repository).
@@ -181,7 +209,10 @@ Before you begin, ensure you have the following:
 | DELETE | `/api/customer/{id}`| Delete customer by ID     |
 
 ---
+### Retrieve Specific inserted values
 
+    curl --location 'http://localhost:8080/api/customerManagement/customer/6'
+    
 ### 🍽️ Restaurant APIs
 
 | Method | Endpoint               | Description                 |

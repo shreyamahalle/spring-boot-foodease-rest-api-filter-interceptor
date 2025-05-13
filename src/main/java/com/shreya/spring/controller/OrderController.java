@@ -10,16 +10,22 @@ import org.springframework.web.bind.annotation.*;
 import java.sql.SQLException;
 import java.util.List;
 
-
 @RestController
 @RequestMapping("/api/orderManagement")
-
 public class OrderController {
 
     private final Logger log = LoggerFactory.getLogger(OrderController.class);
 
     @Autowired
     private OrderService orderService;
+
+    // Handle HTML form POST
+    @PostMapping("/form-order")
+    public String submitOrder(@ModelAttribute Order order) throws SQLException {
+        log.info("Submitting order from HTML form: {}", order);
+        orderService.addOrder(order);
+        return "redirect:/order.html"; // or success page
+    }
 
     @PostMapping("/order")
     public boolean addOrder(@RequestBody Order order) throws SQLException {

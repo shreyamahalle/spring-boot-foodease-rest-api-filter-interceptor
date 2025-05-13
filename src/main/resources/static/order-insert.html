@@ -8,7 +8,9 @@
 </head>
 <body>
 <h1>Order Information</h1>
-<form action="/submit" method="POST">
+<form action="/api/orderManagement/form-order" method="POST">
+    <input type="hidden" name="token" value="mysecrettoken">
+
     <label for="id">Order ID:</label>
     <input id="id" name="id" required type="number"><br><br>
 

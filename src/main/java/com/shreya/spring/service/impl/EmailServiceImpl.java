@@ -10,7 +10,7 @@ public class EmailServiceImpl implements EmailService {
     private static final Logger logger = LoggerFactory.getLogger(EmailServiceImpl.class);
 
     @Override
-    public void sendEmail(String to, String message) {
+    public void sendEmail(String to, String message, String s) {
         logger.info("Email sent to {}: {}", to, message);
     }
 }

@@ -1,6 +1,7 @@
 package com.shreya.spring.controller;
 
 import com.shreya.spring.model.Order;
+import com.shreya.spring.service.EmailService;
 import com.shreya.spring.service.OrderService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -18,6 +19,22 @@ public class OrderController {
 
     @Autowired
     private OrderService orderService;
+
+    @Autowired
+    private EmailService emailService;
+
+
+    public String createOrder(@RequestBody Order order) throws SQLException {
+        // Process the order (e.g., save it to the database)
+        orderService.addOrder(order);
+
+        // Send email after order is created
+        String emailSubject = "Order Confirmation";
+        String emailBody = "Your order has been placed successfully!";
+        emailService.sendEmail(order.getCustomerEmail(), emailSubject, emailBody);
+
+        return "Order placed and email sent!";
+    }
 
     // Handle HTML form POST
     @PostMapping("/form-order")

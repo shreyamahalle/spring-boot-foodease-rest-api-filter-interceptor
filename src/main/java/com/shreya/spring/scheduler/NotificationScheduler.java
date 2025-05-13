@@ -24,32 +24,32 @@ public class NotificationScheduler {
 
     @Scheduled(fixedRate = 60000)  // Runs every 60 seconds
     public void sendReminders() {
-        logger.info("⏰ Scheduler running: Checking for pending orders...");
+        logger.info("Scheduler running: Checking for pending orders...");
 
         try {
             List<Order> allOrders = orderService.retrieveAllOrders();
 
             if (allOrders == null || allOrders.isEmpty()) {
-                logger.info("✅ No orders found.");
+                logger.info("No orders found.");
                 return;
             }
 
             for (Order order : allOrders) {
                 if ("PENDING".equalsIgnoreCase(order.getType())) {
-                    String customerEmail = order.getCustomerEmail(); // ✅ Get from order object
+                    String customerEmail = order.getCustomerEmail(); // Get from order object
 
                     if (customerEmail != null && !customerEmail.isEmpty()) {
                         String message = "Reminder: Your order (ID: " + order.getId() + ") is still pending. Please take action!";
-                        emailService.sendEmail(customerEmail, message);
-                        logger.info("📧 Reminder sent to: {}", customerEmail);
+                        emailService.sendEmail(customerEmail, message, "Test email content.");
+                        logger.info("Reminder sent to: {}", customerEmail);
                     } else {
-                        logger.warn("⚠️ Skipped sending email for order ID {} due to missing email.", order.getId());
+                        logger.warn("Skipped sending email for order ID {} due to missing email.", order.getId());
                     }
                 }
             }
 
         } catch (Exception e) {
-            logger.error("❌ Error during scheduler task: ", e);
+            logger.error("Error during scheduler task: ", e);
         }
     }
 }

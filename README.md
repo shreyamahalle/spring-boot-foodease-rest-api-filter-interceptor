@@ -203,8 +203,9 @@ Before you begin, ensure you have the following:
 | DELETE | `/api/customer/{id}`| Delete customer by ID     |
 
 ---
-```
-# Place order
+### Place Order
+
+```bash
 curl -X POST "http://localhost:8080/api/orders" \
 -H "Authorization: Bearer {token}" \
 -H "Content-Type: application/json" \
@@ -214,9 +215,10 @@ curl -X POST "http://localhost:8080/api/orders" \
         {"menuItemId": 5, "quantity": 2},
         {"menuItemId": 8, "quantity": 1}
     ],
-    "deliveryAddress": "123 Main St"
+    "deliveryAddress": "123 Main St",
+    "specialInstructions": "No onions please",
+    "paymentMethod": "CREDIT_CARD"
 }'
-```
 ### 🍽️ Restaurant APIs
 
 | Method | Endpoint               | Description                 |

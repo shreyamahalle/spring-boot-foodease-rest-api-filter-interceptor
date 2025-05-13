@@ -1,26 +1,39 @@
 package com.shreya.spring.filter;
 
-import jakarta.servlet.FilterChain;
-import jakarta.servlet.ServletException;
+import jakarta.servlet.*;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.stereotype.Component;
-import org.springframework.web.filter.OncePerRequestFilter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 
 @Component
-public class RequestLoggingFilter extends OncePerRequestFilter {
+public class RequestLoggingFilter implements Filter {
 
     private static final Logger logger = LoggerFactory.getLogger(RequestLoggingFilter.class);
 
     @Override
-    protected void doFilterInternal(HttpServletRequest request,
-                                    HttpServletResponse response,
-                                    FilterChain filterChain) throws ServletException, IOException {
-        logger.info("Filter - Incoming: {} {}", request.getMethod(), request.getRequestURI());
-        filterChain.doFilter(request, response);
+    public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
+            throws IOException, ServletException {
+
+        HttpServletRequest httpRequest = (HttpServletRequest) request;
+        HttpServletResponse httpResponse = (HttpServletResponse) response;
+
+        logger.info("Filter - Incoming: {} {}", httpRequest.getMethod(), httpRequest.getRequestURI());
+
+        // Continue with the next filter or request handler
+        chain.doFilter(request, response);
+    }
+
+    @Override
+    public void init(FilterConfig filterConfig) throws ServletException {
+        logger.info("RequestLoggingFilter initialized");
+    }
+
+    @Override
+    public void destroy() {
+        logger.info("RequestLoggingFilter destroyed");
     }
 }

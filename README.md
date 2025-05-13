@@ -1,8 +1,5 @@
-<<<<<<< HEAD
-![foodease](img.png)
-=======
-https://raw.githubusercontent.com/shreyamahalle/com.shreya.spring/main/src/main/resources/static/img.png
 
+![foodease](img.png)
 
 >>>>>>> 5798906029e831d8c8ef3c99429d311a7e95f874
 # spring-boot-foodease-rest-api-filter-interceptor

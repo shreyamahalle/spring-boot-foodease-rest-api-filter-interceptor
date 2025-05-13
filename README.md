@@ -1,4 +1,4 @@
-<img src="https://github.com/user-attachments/assets/34687b9c-f0b6-40b1-be33-1f6e174fd8ce" width="200" height="200">
+<img src="https://github.com/user-attachments/assets/34687b9c-f0b6-40b1-be33-1f6e174fd8ce" width="100" height="200">
 
 # spring-boot-foodease-rest-api-filter-interceptor
 spring-boot-foodease-rest-api-filter-interceptor

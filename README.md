@@ -11,7 +11,7 @@
 ## Table of Contents
 
 - [Introduction](#introduction)
-- [Advanced_Features](#Advanced_Features)
+- [Advanced_Features](#Advanced-Features)
 - [Features](#features)
 - [Technology Stack](#Technology-Stack)
 - [Getting Started](#Getting-Started)

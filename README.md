@@ -219,6 +219,10 @@ Before you begin, ensure you have the following:
     curl --location 'http://localhost:8080/api/customerManagement/customer
 
 
+### Delete Specific inserted values
+
+    curl --location 'http://localhost:8080/api/customerManagement/customer
+    
 ### 🍽️ Restaurant APIs
 
 | Method | Endpoint               | Description                 |

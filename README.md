@@ -1,6 +1,12 @@
 
 ![img_1](https://github.com/user-attachments/assets/771cf93e-c2fd-4f65-a141-5e54b74a14ae)
 
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/771cf93e-c2fd-4f65-a141-5e54b74a14ae" 
+       alt="FoodEase Logo" 
+       width="300px"
+       style="height: auto; display: block; margin: 0 auto;">
+</p>
 
 # spring-boot-foodease-rest-api-filter-interceptor
 spring-boot-foodease-rest-api-filter-interceptor

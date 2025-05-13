@@ -1,3 +1,4 @@
+[FoodEase Logo](https://via.placeholder.com/150)
 # spring-boot-foodease-rest-api-filter-interceptor
 spring-boot-foodease-rest-api-filter-interceptor
 

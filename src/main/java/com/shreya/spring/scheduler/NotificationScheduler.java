@@ -24,14 +24,14 @@ public class NotificationScheduler {
 
     @Scheduled(fixedRate = 60000)  // Runs every 60 seconds
     public void sendReminders() {
-        logger.info("⏰ Running scheduled task to check for pending orders...");
+        logger.info("Running scheduled task to check for pending orders...");
 
         try {
             // Retrieve all orders that are in the "PENDING" status
             List<Order> pendingOrders = orderService.retrieveAllOrders();
 
             if (pendingOrders.isEmpty()) {
-                logger.info("📋 No pending orders to process.");
+                logger.info("No pending orders to process.");
                 return;
             }
 
@@ -43,13 +43,13 @@ public class NotificationScheduler {
 
                     // Sending the reminder email
                     String message = "Reminder: Your order (ID: " + order.getId() + ") is still pending. Please take action!";
-                    logger.info("📧 Sending reminder email to customer: {}", customerEmail);
+                    logger.info("Sending reminder email to customer: {}", customerEmail);
                     emailService.sendEmail(customerEmail, message);
                 }
             }
 
         } catch (Exception e) {
-            logger.error("🚨 Error occurred while processing pending orders: {}", e.getMessage());
+            logger.error("Error occurred while processing pending orders: {}", e.getMessage());
         }
     }
 }

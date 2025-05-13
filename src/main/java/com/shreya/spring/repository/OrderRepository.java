@@ -19,7 +19,7 @@ public class OrderRepository {
     private final Logger log = LoggerFactory.getLogger(OrderRepository.class);
 
     public boolean addOrder(Order order) {
-        String query = "INSERT INTO orderr (id, type, note, paymentMethod) VALUES (?, ?, ?, ?)";
+        String query = "INSERT INTO orderr (id, type, note, paymentMethod,customerEmail) VALUES (?,?, ?, ?, ?)";
 
         try (Connection connection = ConnectionService.getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(query)) {
@@ -28,6 +28,8 @@ public class OrderRepository {
             preparedStatement.setString(2, order.getType());
             preparedStatement.setString(3, order.getNote());
             preparedStatement.setString(4, order.getPaymentMethod());
+            preparedStatement.setString(5, order.getCustomerEmail());
+
 
             log.info("Adding Order: {}", order);
             return preparedStatement.executeUpdate() > 0;
@@ -53,7 +55,8 @@ public class OrderRepository {
                         resultSet.getInt("id"),
                         resultSet.getString("type"),
                         resultSet.getString("note"),
-                        resultSet.getString("paymentMethod")
+                        resultSet.getString("paymentMethod"),
+                        resultSet.getString("customerEmail")
                 );
                 orders.add(order);
             }
@@ -84,7 +87,8 @@ public class OrderRepository {
                         id,
                         type,
                         resultSet.getString("note"),
-                        resultSet.getString("paymentMethod")
+                        resultSet.getString("paymentMethod"),
+                        resultSet.getString("customerEmail")
                 );
             }
 

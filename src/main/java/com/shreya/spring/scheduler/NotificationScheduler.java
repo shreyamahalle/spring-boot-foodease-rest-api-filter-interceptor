@@ -17,39 +17,39 @@ public class NotificationScheduler {
     private static final Logger logger = LoggerFactory.getLogger(NotificationScheduler.class);
 
     @Autowired
-    private OrderService orderService;  // Injecting the OrderService to access order-related logic
+    private OrderService orderService;
 
     @Autowired
-    private EmailService emailService;  // Injecting the EmailService to send emails
+    private EmailService emailService;
 
     @Scheduled(fixedRate = 60000)  // Runs every 60 seconds
     public void sendReminders() {
-        logger.info("Running scheduled task to check for pending orders...");
+        logger.info("⏰ Scheduler running: Checking for pending orders...");
 
         try {
-            // Retrieve all orders that are in the "PENDING" status
-            List<Order> pendingOrders = orderService.retrieveAllOrders();
+            List<Order> allOrders = orderService.retrieveAllOrders();
 
-            if (pendingOrders.isEmpty()) {
-                logger.info("No pending orders to process.");
+            if (allOrders == null || allOrders.isEmpty()) {
+                logger.info("✅ No orders found.");
                 return;
             }
 
-            // Loop through the pending orders and send reminders (or notifications)
-            for (Order order : pendingOrders) {
-                if ("PENDING".equals(order.getType())) {  // Check if the order status is "PENDING"
-                    // Retrieve the customer email (assuming Order has a customer email field or you fetch it separately)
-                    String customerEmail = "shreyamahalle2@gmail.com";  
+            for (Order order : allOrders) {
+                if ("PENDING".equalsIgnoreCase(order.getType())) {
+                    String customerEmail = order.getCustomerEmail(); // ✅ Get from order object
 
-                    // Sending the reminder email
-                    String message = "Reminder: Your order (ID: " + order.getId() + ") is still pending. Please take action!";
-                    logger.info("Sending reminder email to customer: {}", customerEmail);
-                    emailService.sendEmail(customerEmail, message);
+                    if (customerEmail != null && !customerEmail.isEmpty()) {
+                        String message = "Reminder: Your order (ID: " + order.getId() + ") is still pending. Please take action!";
+                        emailService.sendEmail(customerEmail, message);
+                        logger.info("📧 Reminder sent to: {}", customerEmail);
+                    } else {
+                        logger.warn("⚠️ Skipped sending email for order ID {} due to missing email.", order.getId());
+                    }
                 }
             }
 
         } catch (Exception e) {
-            logger.error("Error occurred while processing pending orders: {}", e.getMessage());
+            logger.error("❌ Error during scheduler task: ", e);
         }
     }
 }

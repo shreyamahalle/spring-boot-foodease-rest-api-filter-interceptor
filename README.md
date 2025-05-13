@@ -203,23 +203,10 @@ Before you begin, ensure you have the following:
 | DELETE | `/api/customer/{id}`| Delete customer by ID     |
 
 ---
-### Place Order
+### Retrieve Specific inserted values
 
-```bash
-curl -X POST "http://localhost:8080/api/orders" \
--H "Authorization: Bearer {token}" \
--H "Content-Type: application/json" \
--d '{
-    "customerId": 1,
-    "items": [
-        {"menuItemId": 5, "quantity": 2},
-        {"menuItemId": 8, "quantity": 1}
-    ],
-    "deliveryAddress": "123 Main St",
-    "specialInstructions": "No onions please",
-    "paymentMethod": "CREDIT_CARD"
-}'
-```
+    curl --location 'http://localhost:8080/api/customerManagement/customer/6'
+    
 ### 🍽️ Restaurant APIs
 
 | Method | Endpoint               | Description                 |

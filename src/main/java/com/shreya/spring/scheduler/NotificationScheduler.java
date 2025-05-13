@@ -39,7 +39,7 @@ public class NotificationScheduler {
             for (Order order : pendingOrders) {
                 if ("PENDING".equals(order.getType())) {  // Check if the order status is "PENDING"
                     // Retrieve the customer email (assuming Order has a customer email field or you fetch it separately)
-                    String customerEmail = "customer@example.com";  // Replace with actual customer email field or fetch logic
+                    String customerEmail = "shreyamahalle2@gmail.com";  
 
                     // Sending the reminder email
                     String message = "Reminder: Your order (ID: " + order.getId() + ") is still pending. Please take action!";

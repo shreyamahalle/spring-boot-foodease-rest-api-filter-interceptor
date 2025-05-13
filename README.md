@@ -219,6 +219,7 @@ curl -X POST "http://localhost:8080/api/orders" \
     "specialInstructions": "No onions please",
     "paymentMethod": "CREDIT_CARD"
 }'
+```
 ### 🍽️ Restaurant APIs
 
 | Method | Endpoint               | Description                 |

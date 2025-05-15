@@ -14,7 +14,6 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/tableBookingManagement")
-
 public class BookingTableController {
 
     private final Logger log = LoggerFactory.getLogger(BookingTableController.class);

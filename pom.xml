@@ -121,7 +121,6 @@
             </releases>
         </pluginRepository>
     </pluginRepositories>
-
     <licenses>
         <license>
             <name>MIT License</name>

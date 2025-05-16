@@ -59,9 +59,6 @@
 ## Project Overview
 
 The Spring Booking Management System provides a modular approach to managing:
-- **Customer Management:** Registration, login, profile management, and personalized recommendations.
-- **Restaurant Management:** CRUD operations, menu management, and real-time updates.
-- **Order Management:** Place, track, and manage orders with real-time status updates.
 
 - Customers
 - Restaurants

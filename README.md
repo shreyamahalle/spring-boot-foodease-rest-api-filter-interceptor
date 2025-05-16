@@ -5,7 +5,7 @@
        style="height: auto; display: block; margin: 0 auto;">
 </p>
 
-Foodease - Food Order Booking System
+#Foodease - Food Order Booking System
 
 ## Table of Contents
 

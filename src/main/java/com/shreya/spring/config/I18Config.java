@@ -41,5 +41,4 @@ public class I18Config implements WebMvcConfigurer {
         source.setDefaultEncoding("UTF-8");
         return source;
     }
-
 }

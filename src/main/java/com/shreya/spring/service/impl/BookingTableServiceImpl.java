@@ -14,7 +14,6 @@ import java.util.List;
 
 @Service
 @AllArgsConstructor
-
 public class BookingTableServiceImpl implements BookingTableService {
 
     private final Logger log = LoggerFactory.getLogger(BookingTableServiceImpl.class);

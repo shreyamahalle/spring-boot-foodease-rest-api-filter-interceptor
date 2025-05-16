@@ -26,7 +26,6 @@ public class RequestLoggingFilter implements Filter {
         // Continue with the next filter or request handler
         chain.doFilter(request, response);
     }
-
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
         logger.info("RequestLoggingFilter initialized");

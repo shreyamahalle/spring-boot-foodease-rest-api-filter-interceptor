@@ -5,7 +5,7 @@
        style="height: auto; display: block; margin: 0 auto;">
 </p>
 
-# spring-boot-foodease-rest-api-filter-interceptor
+Foodease - Food Order Booking System
 
 ## Table of Contents
 

@@ -49,6 +49,7 @@
 3. **Promotion Engine**: Weekly coupon generation
 
 ### Email Service
+
 - Order confirmation emails
 - Delivery status updates
 - Password reset functionality

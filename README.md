@@ -188,7 +188,7 @@ Before you begin, ensure you have the following:
 ## 7. **Compile and Run the Application:**
 
 - Locate Main.java in your IDE.
-
+  
 - Run the file to launch the application.
 
 ## 8. **Build the project:**

@@ -43,6 +43,7 @@
 4. **Request Validation Interceptor**: Validates payloads before controller processing
 
 ### Scheduled Tasks
+
 1. **Daily Sales Report**: Generated at midnight
 2. **Order Status Updates**: Hourly checks for pending orders
 3. **Promotion Engine**: Weekly coupon generation

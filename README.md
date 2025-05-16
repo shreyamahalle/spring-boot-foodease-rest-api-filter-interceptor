@@ -30,8 +30,7 @@
 
 # **foodease-food-order-booking-system**
 
-Welcome to thefoodease-food-order-booking-system, a simple yet powerful Java application that simulates a booking management system. This project is built using the
-Spring Framework (XML-based configuration only) and applies solid Object-Oriented Programming (OOP) principles.
+**Foodease** is a Java Spring-based online food ordering and booking system. It allows customers to register, browse restaurants, place orders, and receive deliveries from nearby agents. The system is modular, scalable, and designed for real-world business needs.
 
 > **Use case**: A food ordering platform where customers can register, explore nearby restaurants, place orders, and get deliveries from available agents based on location and serviceability.
 

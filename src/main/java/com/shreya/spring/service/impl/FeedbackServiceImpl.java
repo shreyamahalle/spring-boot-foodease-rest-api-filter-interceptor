@@ -1,5 +1,7 @@
 package com.shreya.spring.service.impl;
 
+import com.shreya.spring.exception.FeedbackCreationException;
+import com.shreya.spring.exception.FeedbackNotFoundException;
 import com.shreya.spring.model.Feedback;
 import com.shreya.spring.repository.FeedbackRepository;
 import com.shreya.spring.service.FeedbackService;
@@ -22,31 +24,47 @@ public class FeedbackServiceImpl implements FeedbackService {
 
     @Override
     public boolean addFeedback(Feedback feedback) throws SQLException {
-        log.info("Saving feedback{}", feedback);
-        return feedbackRepository.addFeedback(feedback);
+        log.info("Saving feedback: {}", feedback);
+        boolean result = feedbackRepository.addFeedback(feedback);
+        if (!result) {
+            throw new FeedbackCreationException("Unable to add feedback.");
+        }
+        return result;
     }
 
     @Override
     public List<Feedback> getAllFeedbacks() {
-        log.info("all feedbacks");
+        log.info("Fetching all feedbacks");
         return feedbackRepository.retrieveFeedbacks();
     }
 
     @Override
     public Optional<Feedback> getFeedbackById(Long id) {
-        log.info("get Feedback ById {}", id);
-        return feedbackRepository.findById(id);
+        log.info("Fetching feedback by id: {}", id);
+        Optional<Feedback> feedback = feedbackRepository.findById(id);
+        if (feedback.isEmpty()) {
+            throw new FeedbackNotFoundException("Feedback not found with ID: " + id);
+        }
+        return feedback;
     }
 
     @Override
     public boolean deleteFeedback(Long id) {
-        log.info("delete Feedback ById {}", id);
-        return feedbackRepository.deleteFeedback(id);
+        log.info("Deleting feedback by id: {}", id);
+        boolean result = feedbackRepository.deleteFeedback(id);
+        if (!result) {
+            throw new FeedbackNotFoundException("Cannot delete. Feedback not found with ID: " + id);
+        }
+        return result;
     }
 
     @Override
     public boolean updateFeedback(Feedback feedback) {
-        log.info("update Feedback  {}", feedback);
-        return feedbackRepository.updateFeedback(feedback);
+        log.info("Updating feedback: {}", feedback);
+        boolean result = feedbackRepository.updateFeedback(feedback);
+        if (!result) {
+            throw new FeedbackNotFoundException("Cannot update. Feedback not found with ID: " + feedback.getId());
+        }
+        return result;
     }
 }

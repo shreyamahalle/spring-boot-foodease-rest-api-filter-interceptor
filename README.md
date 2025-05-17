@@ -1,12 +1,10 @@
-
 <p align="center">
   <img src="https://github.com/user-attachments/assets/771cf93e-c2fd-4f65-a141-5e54b74a14ae" 
        alt="FoodEase Logo" 
        width="300px"
        style="height: auto; display: block; margin: 0 auto;">
 </p>
-
-# spring-boot-foodease-rest-api-filter-interceptor
+# Foodease - Food Order Booking System
 
 ## Table of Contents
 
@@ -31,8 +29,7 @@
 
 # **foodease-food-order-booking-system**
 
-Welcome to thefoodease-food-order-booking-system, a simple yet powerful Java application that simulates a booking management system. This project is built using the
-Spring Framework (XML-based configuration only) and applies solid Object-Oriented Programming (OOP) principles.
+**Foodease** is a Java Spring-based online food ordering and booking system. It allows customers to register, browse restaurants, place orders, and receive deliveries from nearby agents. The system is modular, scalable, and designed for real-world business needs.
 
 > **Use case**: A food ordering platform where customers can register, explore nearby restaurants, place orders, and get deliveries from available agents based on location and serviceability.
 
@@ -45,11 +42,13 @@ Spring Framework (XML-based configuration only) and applies solid Object-Oriente
 4. **Request Validation Interceptor**: Validates payloads before controller processing
 
 ### Scheduled Tasks
+
 1. **Daily Sales Report**: Generated at midnight
 2. **Order Status Updates**: Hourly checks for pending orders
 3. **Promotion Engine**: Weekly coupon generation
 
 ### Email Service
+
 - Order confirmation emails
 - Delivery status updates
 - Password reset functionality
@@ -189,7 +188,7 @@ Before you begin, ensure you have the following:
 ## 7. **Compile and Run the Application:**
 
 - Locate Main.java in your IDE.
-
+  
 - Run the file to launch the application.
 
 ## 8. **Build the project:**

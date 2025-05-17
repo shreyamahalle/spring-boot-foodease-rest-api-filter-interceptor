@@ -1,10 +1,12 @@
 package com.shreya.spring.controller;
 
+import com.shreya.spring.exception.*;
 import com.shreya.spring.model.MenuItem;
 import com.shreya.spring.service.MenuItemService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.sql.SQLException;
@@ -16,37 +18,64 @@ public class MenuItemController {
 
     private final Logger log = LoggerFactory.getLogger(MenuItemController.class);
 
-    @Autowired
-    private MenuItemService menuItemService;
+    private final MenuItemService menuItemService;
+
+    public MenuItemController(MenuItemService menuItemService) {
+        this.menuItemService = menuItemService;
+    }
 
     @PostMapping("/menuItem")
-    public boolean addMenuItem(@RequestBody MenuItem menuItem) throws SQLException {
-        log.info("Received request to add menu item: {}", menuItem);
-        return menuItemService.addMenuItem(menuItem);
+    public ResponseEntity<String> addMenuItem(@RequestBody MenuItem menuItem) {
+        try {
+            log.info("Received request to add menu item: {}", menuItem);
+            menuItemService.addMenuItem(menuItem);
+            return ResponseEntity.ok("MenuItem added successfully");
+        } catch (MenuItemCreationException | SQLException e) {
+            log.error("MenuItem creation failed: {}", e.getMessage());
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e.getMessage());
+        }
     }
 
     @GetMapping("/menuItem")
-    public List<MenuItem> getAllMenuItems() {
+    public ResponseEntity<List<MenuItem>> getAllMenuItems() {
         log.info("Received request to fetch all menu items");
-        return menuItemService.getAllMenuItems();
+        return ResponseEntity.ok(menuItemService.getAllMenuItems());
     }
 
     @GetMapping("/menuItem/{id}")
-    public MenuItem getMenuItemById(@PathVariable long id) {
-        log.info("Received request to fetch menu item by id: {}", id);
-        return menuItemService.getMenuItemById(id);
+    public ResponseEntity<?> getMenuItemById(@PathVariable long id) {
+        try {
+            log.info("Received request to fetch menu item by id: {}", id);
+            MenuItem menuItem = menuItemService.getMenuItemById(id);
+            return ResponseEntity.ok(menuItem);
+        } catch (MenuItemNotFoundException e) {
+            log.error("MenuItem not found: {}", e.getMessage());
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
+        }
     }
 
     @DeleteMapping("/menuItem/{id}")
-    public boolean deleteMenuItem(@PathVariable long id) {
-        log.info("Received request to delete menu item with id: {}", id);
-        return menuItemService.deleteMenuItem(id);
+    public ResponseEntity<String> deleteMenuItem(@PathVariable long id) {
+        try {
+            log.info("Received request to delete menu item with id: {}", id);
+            menuItemService.deleteMenuItem(id);
+            return ResponseEntity.ok("MenuItem deleted successfully");
+        } catch (MenuItemDeletionException e) {
+            log.error("MenuItem deletion failed: {}", e.getMessage());
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
+        }
     }
 
     @PutMapping("/menuItem/{id}")
-    public boolean updateMenuItem(@PathVariable long id, @RequestBody MenuItem menuItem) {
-        menuItem.setId(id);  // Ensure the id is set correctly in the object
-        log.info("Received request to update menu item: {}", menuItem);
-        return menuItemService.updateMenuItem(menuItem);
+    public ResponseEntity<String> updateMenuItem(@PathVariable long id, @RequestBody MenuItem menuItem) {
+        try {
+            menuItem.setId(id);
+            log.info("Received request to update menu item: {}", menuItem);
+            menuItemService.updateMenuItem(menuItem);
+            return ResponseEntity.ok("MenuItem updated successfully");
+        } catch (MenuItemUpdateException e) {
+            log.error("MenuItem update failed: {}", e.getMessage());
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
+        }
     }
 }

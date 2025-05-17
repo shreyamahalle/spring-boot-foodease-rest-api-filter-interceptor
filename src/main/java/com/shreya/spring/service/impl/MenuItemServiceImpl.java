@@ -1,5 +1,6 @@
 package com.shreya.spring.service.impl;
 
+import com.shreya.spring.exception.*;
 import com.shreya.spring.model.MenuItem;
 import com.shreya.spring.repository.MenuItemRepository;
 import com.shreya.spring.service.MenuItemService;
@@ -21,31 +22,43 @@ public class MenuItemServiceImpl implements MenuItemService {
 
     @Override
     public boolean addMenuItem(MenuItem menuItem) throws SQLException {
-        log.info("Saving menuItem for customerId {}", menuItem);
+        log.info("Saving menuItem {}", menuItem);
         return menuItemRepository.addMenuItem(menuItem);
     }
 
     @Override
     public List<MenuItem> getAllMenuItems() {
-        log.info("all menuItem");
+        log.info("Fetching all menuItems");
         return menuItemRepository.retrieveMenuItems();
     }
 
     @Override
     public MenuItem getMenuItemById(long id) {
-        log.info("get Menu Item ById {}", id);
-        return menuItemRepository.findById(id);
+        log.info("Fetching menu item by id: {}", id);
+        MenuItem menuItem = menuItemRepository.findById(id);
+        if (menuItem == null) {
+            throw new MenuItemNotFoundException("MenuItem not found with id: " + id);
+        }
+        return menuItem;
     }
 
     @Override
     public boolean deleteMenuItem(long id) {
-        log.info("delete MenuItem {}", id);
-        return menuItemRepository.deleteMenuItem(id);
+        log.info("Deleting menuItem with id: {}", id);
+        boolean deleted = menuItemRepository.deleteMenuItem(id);
+        if (!deleted) {
+            throw new MenuItemDeletionException("Failed to delete MenuItem with id: " + id);
+        }
+        return true;
     }
 
     @Override
     public boolean updateMenuItem(MenuItem menuItem) {
-        log.info("update MenuItem  {}", menuItem);
-        return menuItemRepository.updateMenuItem(menuItem);
+        log.info("Updating menuItem {}", menuItem);
+        boolean updated = menuItemRepository.updateMenuItem(menuItem);
+        if (!updated) {
+            throw new MenuItemUpdateException("Failed to update MenuItem with id: " + menuItem.getId());
+        }
+        return true;
     }
 }

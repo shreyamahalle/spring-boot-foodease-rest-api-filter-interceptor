@@ -1,5 +1,6 @@
 package com.shreya.spring.service;
 
+import com.shreya.spring.exception.CustomerNotfound;
 import com.shreya.spring.model.CartItem;
 
 import java.sql.SQLException;
@@ -13,7 +14,7 @@ public interface CartItemService {
 
     boolean updateCartItem(CartItem cartItem) throws SQLException;
 
-    List<CartItem> retrieveCartItem();
+    List<CartItem> retrieveCartItem() throws CustomerNotfound;
 
     CartItem getCartItem(int id);
 

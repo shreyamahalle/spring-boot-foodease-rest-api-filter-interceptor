@@ -1,5 +1,8 @@
 package com.shreya.spring.service.impl;
 
+import com.shreya.spring.exception.CartItemAddFailedException;
+import com.shreya.spring.exception.CartItemNotFoundException;
+import com.shreya.spring.exception.CartItemUpdateFailedException;
 import com.shreya.spring.model.CartItem;
 import com.shreya.spring.repository.CartItemRepository;
 import com.shreya.spring.service.CartItemService;
@@ -23,28 +26,45 @@ public class CartItemServiceImpl implements CartItemService {
 
     @Override
     public boolean addCartItem(CartItem cartItem) throws SQLException {
-        log.info("Saving CartItem{}", cartItem);
-        return cartItemRepository.addCartItem(cartItem);
+        log.info("Saving CartItem {}", cartItem);
+        boolean isAdded = cartItemRepository.addCartItem(cartItem);
+        if (!isAdded) {
+            log.error("Failed to add CartItem: {}", cartItem);
+            throw new CartItemAddFailedException("Failed to add CartItem");
+        }
+        return true;
     }
 
     @Override
     public boolean deleteCartItem(int id) {
         log.info("Deleting cart item with ID: {}", id);
-        return cartItemRepository.deleteCartItem(id);
-
+        boolean isDeleted = cartItemRepository.deleteCartItem(id);
+        if (!isDeleted) {
+            log.error("CartItem not found or could not be deleted for ID: {}", id);
+            throw new CartItemNotFoundException("CartItem not found for ID: " + id);
+        }
+        return true;
     }
 
     @Override
     public boolean updateCartItem(CartItem cartItem) throws SQLException {
         log.info("Updating cart item: {}", cartItem);
-        return cartItemRepository.updateCartItem(cartItem);
+        boolean isUpdated = cartItemRepository.updateCartItem(cartItem);
+        if (!isUpdated) {
+            log.error("Failed to update CartItem: {}", cartItem);
+            throw new CartItemUpdateFailedException("Failed to update CartItem");
+        }
+        return true;
     }
 
     @Override
-    public List<CartItem> retrieveCartItem() {
+    public List<CartItem> retrieveCartItem(){
         log.info("Retrieving all cart items");
         List<CartItem> items = cartItemRepository.retrieveCartItems();
         log.info("Retrieved {} cart items", items.size());
+        if (items.isEmpty()) {
+            log.warn("No cart items found");
+        }
         return items;
     }
 
@@ -52,10 +72,9 @@ public class CartItemServiceImpl implements CartItemService {
     public CartItem getCartItem(int id) {
         log.info("Fetching cart item with ID: {}", id);
         CartItem item = cartItemRepository.findById(id);
-        if (item != null) {
-            log.info("Cart item found: {}", item);
-        } else {
-            log.warn("Cart item not found for ID: {}", id);
+        if (item == null) {
+            log.error("CartItem not found for ID: {}", id);
+            throw new CartItemNotFoundException("CartItem not found for ID: " + id);
         }
         return item;
     }
@@ -64,7 +83,10 @@ public class CartItemServiceImpl implements CartItemService {
     public boolean updatePartialCartItem(CartItem cartItem) {
         log.info("Partially updating cart item: {}", cartItem);
         boolean updated = cartItemRepository.updatePartialCartItem(cartItem);
-        log.info("Partial update success: {}", updated);
-        return updated;
+        if (!updated) {
+            log.error("Failed to partially update CartItem: {}", cartItem);
+            throw new CartItemUpdateFailedException("Failed to partially update CartItem");
+        }
+        return true;
     }
 }

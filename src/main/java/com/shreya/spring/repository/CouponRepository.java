@@ -18,7 +18,7 @@ public class CouponRepository {
 
     private final Logger log = LoggerFactory.getLogger(CouponRepository.class);
 
-    public boolean saveCoupon(Coupon coupon) {
+    public boolean saveCoupon(String coupon) {
         String query = "INSERT INTO coupon (code, description, discount_amount, active) VALUES (?, ?, ?, ?)";
         try (Connection conn = ConnectionService.getConnection();
              PreparedStatement ps = conn.prepareStatement(query)) {
@@ -105,7 +105,7 @@ public class CouponRepository {
         }
     }
 
-    public boolean updateCoupon(Coupon coupon) {
+    public boolean updateCoupon(Long coupon) {
         String query = "UPDATE coupon SET code = ?, description = ?, discount_amount = ?, active = ? WHERE id = ?";
         try (Connection conn = ConnectionService.getConnection();
              PreparedStatement ps = conn.prepareStatement(query)) {

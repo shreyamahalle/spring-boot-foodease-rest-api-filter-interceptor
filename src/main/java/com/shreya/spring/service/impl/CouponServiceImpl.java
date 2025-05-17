@@ -1,5 +1,7 @@
 package com.shreya.spring.service.impl;
 
+import com.shreya.spring.exception.CouponAlreadyExistsException;
+import com.shreya.spring.exception.CouponNotFoundException;
 import com.shreya.spring.model.Coupon;
 import com.shreya.spring.repository.CouponRepository;
 import com.shreya.spring.service.CouponService;
@@ -22,7 +24,11 @@ public class CouponServiceImpl implements CouponService {
     @Override
     public boolean saveCoupon(Coupon coupon) throws SQLException {
         log.info("Saving coupon: {}", coupon);
-        return couponRepository.saveCoupon(coupon);
+        if (couponRepository.saveCoupon(coupon.getCode())) {
+            throw new CouponAlreadyExistsException("Coupon already exists with code: " + coupon.getCode());
+        }
+        couponRepository.saveCoupon(String.valueOf(coupon));
+        return true;
     }
 
     @Override
@@ -40,12 +46,20 @@ public class CouponServiceImpl implements CouponService {
     @Override
     public boolean deleteCoupon(Long id) {
         log.info("Deleting coupon with id: {}", id);
-        return couponRepository.deleteCoupon(id);
+        if (!couponRepository.deleteCoupon(id)) {
+            throw new CouponNotFoundException("Coupon not found with id: " + id);
+        }
+        couponRepository.deleteCoupon(id);
+        return true;
     }
 
     @Override
     public boolean updateCoupon(Coupon coupon) {
         log.info("Updating coupon: {}", coupon);
-        return couponRepository.updateCoupon(coupon);
+        if (!couponRepository.updateCoupon(coupon.getId())) {
+            throw new CouponNotFoundException("Coupon not found with id: " + coupon.getId());
+        }
+        couponRepository.updateCoupon(coupon.getId());
+        return true;
     }
 }

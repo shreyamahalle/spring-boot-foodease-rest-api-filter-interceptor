@@ -5,6 +5,7 @@ import com.shreya.spring.service.NotificationService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.sql.SQLException;
@@ -26,9 +27,10 @@ public class NotificationController {
     }
 
     @GetMapping
-    public List<Notification> getAll() {
+    public ResponseEntity<List<Notification>> getAll() {
         log.info("Fetching all notifications");
-        return notificationService.getAllNotifications();
+        List<Notification> notifications = notificationService.getAllNotifications();
+        return ResponseEntity.ok(notifications);
     }
 
     @GetMapping("/customer/{customerId}")

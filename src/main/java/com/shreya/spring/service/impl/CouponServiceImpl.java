@@ -24,11 +24,13 @@ public class CouponServiceImpl implements CouponService {
     @Override
     public boolean saveCoupon(Coupon coupon) throws SQLException {
         log.info("Saving coupon: {}", coupon);
-        if (couponRepository.saveCoupon(coupon.getCode())) {
+        List<Coupon> allCoupons = couponRepository.getAllCoupons();
+        boolean exists = allCoupons.stream()
+                .anyMatch(c -> c.getCode().equalsIgnoreCase(coupon.getCode()));
+        if (exists) {
             throw new CouponAlreadyExistsException("Coupon already exists with code: " + coupon.getCode());
         }
-        couponRepository.saveCoupon(String.valueOf(coupon));
-        return true;
+        return couponRepository.saveCoupon(coupon);
     }
 
     @Override
@@ -40,26 +42,30 @@ public class CouponServiceImpl implements CouponService {
     @Override
     public Coupon getCouponById(Long id) {
         log.info("Fetching coupon by id: {}", id);
-        return couponRepository.getCouponById(id);
+        Coupon coupon = couponRepository.getCouponById(id);
+        if (coupon == null) {
+            throw new CouponNotFoundException("Coupon not found with id: " + id);
+        }
+        return coupon;
     }
 
     @Override
     public boolean deleteCoupon(Long id) {
         log.info("Deleting coupon with id: {}", id);
-        if (!couponRepository.deleteCoupon(id)) {
+        boolean deleted = couponRepository.deleteCoupon(id);
+        if (!deleted) {
             throw new CouponNotFoundException("Coupon not found with id: " + id);
         }
-        couponRepository.deleteCoupon(id);
-        return true;
+        return deleted;
     }
 
     @Override
     public boolean updateCoupon(Coupon coupon) {
         log.info("Updating coupon: {}", coupon);
-        if (!couponRepository.updateCoupon(coupon.getId())) {
+        boolean updated = couponRepository.updateCoupon(coupon);
+        if (!updated) {
             throw new CouponNotFoundException("Coupon not found with id: " + coupon.getId());
         }
-        couponRepository.updateCoupon(coupon.getId());
-        return true;
+        return updated;
     }
 }

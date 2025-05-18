@@ -1,6 +1,5 @@
 package com.shreya.spring.controller;
 
-import com.shreya.spring.exception.CouponAlreadyExistsException;
 import com.shreya.spring.exception.CouponNotFoundException;
 import com.shreya.spring.exception.CouponServiceException;
 import com.shreya.spring.model.Coupon;
@@ -47,7 +46,7 @@ public class CouponController {
         log.info("API called: get coupon by id {}", id);
         Coupon coupon = couponService.getCouponById(id);
         if (coupon == null) {
-            throw new CouponAlreadyExistsException("Coupon not found with id: " + id);
+            throw new CouponNotFoundException("Coupon not found with id: " + id);
         }
         return ResponseEntity.ok(coupon);
     }

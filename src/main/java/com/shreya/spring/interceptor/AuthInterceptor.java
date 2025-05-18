@@ -13,28 +13,7 @@ public class AuthInterceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         logger.info("Interceptor - PreHandle: {}", request.getRequestURI());
-
-        // Read Authorization header
-        String authHeader = request.getHeader("Authorization");
-
-        // Check if header is missing or malformed
-        if (authHeader == null || !authHeader.startsWith("Bearer ")) {
-            logger.warn("Missing or invalid Authorization header");
-            response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
-            response.getWriter().write("Unauthorized - Missing or invalid token");
-            return false;
-        }
-
-        // Extract token
-        String token = authHeader.substring(7); // remove "Bearer "
-        if (!token.equals("mysecrettoken")) {
-            logger.warn("Invalid token: {}", token);
-            response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
-            response.getWriter().write("Unauthorized - Invalid token");
-            return false;
-        }
-
-        logger.info("Token validated successfully");
+        // Allow all requests without token check
         return true;
     }
 

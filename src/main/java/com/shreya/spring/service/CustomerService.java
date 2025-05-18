@@ -1,6 +1,6 @@
 package com.shreya.spring.service;
 
-import com.shreya.spring.exception.CustomerNotfound;
+import com.shreya.spring.exception.CustomerNotFoundException;
 import com.shreya.spring.model.Customer;
 
 import java.sql.SQLException;
@@ -16,7 +16,7 @@ public interface CustomerService {
 
     List<Customer> retrieveCustomers();
 
-    Customer getCustomerById(int id) throws CustomerNotfound;
+    Customer getCustomerById(int id) throws CustomerNotFoundException;
 
     boolean updatePartialCustomer(Customer customer) throws SQLException;
 

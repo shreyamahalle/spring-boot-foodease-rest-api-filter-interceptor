@@ -1,6 +1,6 @@
 package com.shreya.spring.repository;
 
-import com.shreya.spring.exception.CustomerNotfound;
+import com.shreya.spring.exception.CustomerException;
 import com.shreya.spring.model.BookingTable;
 import com.shreya.spring.service.ConnectionService;
 import org.slf4j.Logger;
@@ -93,9 +93,9 @@ public class BookingTableRepository {
                             rs.getString("status")
                     );
                 } else {
-                    throw new CustomerNotfound("Booking with ID " + id + " not found.");
+                    throw new CustomerException("Booking with ID " + id + " not found.");
                 }
-            } catch (CustomerNotfound e) {
+            } catch (CustomerException e) {
                 throw new RuntimeException(e);
             }
         } catch (SQLException e) {

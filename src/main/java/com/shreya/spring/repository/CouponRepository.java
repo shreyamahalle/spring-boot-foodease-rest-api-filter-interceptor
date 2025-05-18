@@ -18,7 +18,7 @@ public class CouponRepository {
 
     private final Logger log = LoggerFactory.getLogger(CouponRepository.class);
 
-    public boolean saveCoupon(String coupon) {
+    public boolean saveCoupon(Coupon coupon) {  // Accept Coupon object
         String query = "INSERT INTO coupon (code, description, discount_amount, active) VALUES (?, ?, ?, ?)";
         try (Connection conn = ConnectionService.getConnection();
              PreparedStatement ps = conn.prepareStatement(query)) {
@@ -82,6 +82,7 @@ public class CouponRepository {
             }
         } catch (SQLException e) {
             log.error("Error finding coupon with id: {}", id, e);
+            throw new RuntimeException("Error finding coupon by id", e);
         }
         return null;
     }
@@ -105,7 +106,7 @@ public class CouponRepository {
         }
     }
 
-    public boolean updateCoupon(Long coupon) {
+    public boolean updateCoupon(Coupon coupon) {  // Accept Coupon object
         String query = "UPDATE coupon SET code = ?, description = ?, discount_amount = ?, active = ? WHERE id = ?";
         try (Connection conn = ConnectionService.getConnection();
              PreparedStatement ps = conn.prepareStatement(query)) {

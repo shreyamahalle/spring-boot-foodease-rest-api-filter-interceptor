@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/coupons")
+@RequestMapping("/api/couponManagement")
 public class CouponController {
 
     private static final Logger log = LoggerFactory.getLogger(CouponController.class);
@@ -41,7 +41,7 @@ public class CouponController {
         return ResponseEntity.ok(couponService.getAllCoupons());
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("coupon/{id}")
     public ResponseEntity<Coupon> getCouponById(@PathVariable Long id) {
         log.info("API called: get coupon by id {}", id);
         Coupon coupon = couponService.getCouponById(id);
@@ -51,7 +51,7 @@ public class CouponController {
         return ResponseEntity.ok(coupon);
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("coupon/{id}")
     public ResponseEntity<Boolean> deleteCoupon(@PathVariable Long id) {
         log.info("API called: delete coupon by id {}", id);
         try {
@@ -65,7 +65,7 @@ public class CouponController {
         }
     }
 
-    @PutMapping("/{id}")
+    @PutMapping("coupon/{id}")
     public ResponseEntity<Boolean> updateCoupon(@PathVariable Long id, @RequestBody Coupon coupon) {
         coupon.setId(id);
         log.info("API called: update coupon {}", coupon);

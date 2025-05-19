@@ -23,13 +23,8 @@ public class OrderStatusServiceImpl implements OrderStatusService {
 
     @Override
     public boolean addOrderStatus(OrderStatus orderStatus) {
-        try {
-            log.info("Adding Order Status: {}", orderStatus);
-            return orderStatusRepository.addorderStatus(orderStatus);
-        } catch (SQLException e) {
-            log.error("Error while adding order status", e);
-            throw new DatabaseException("Failed to add order status");
-        }
+        log.info("Adding Order Status: {}", orderStatus);
+        return orderStatusRepository.addorderStatus(orderStatus);
     }
 
     @Override
@@ -60,31 +55,21 @@ public class OrderStatusServiceImpl implements OrderStatusService {
 
     @Override
     public boolean updateOrderStatus(OrderStatus orderStatus) {
-        try {
-            log.info("Updating Order Status: {}", orderStatus);
-            boolean updated = orderStatusRepository.updateOrderStatus(orderStatus);
-            if (!updated) {
-                throw new OrderStatusNotFoundException("OrderStatus with ID " + orderStatus.getId() + " not found");
-            }
-            return true;
-        } catch (SQLException e) {
-            log.error("Error while updating order status", e);
-            throw new DatabaseException("Failed to update order status");
+        log.info("Updating Order Status: {}", orderStatus);
+        boolean updated = orderStatusRepository.updateOrderStatus(orderStatus);
+        if (!updated) {
+            throw new OrderStatusNotFoundException("OrderStatus with ID " + orderStatus.getId() + " not found");
         }
+        return true;
     }
 
     @Override
     public boolean deleteOrderStatus(Long id) {
-        try {
-            log.info("Deleting Order Status with ID: {}", id);
-            boolean deleted = orderStatusRepository.deleteOrderStatus(id);
-            if (!deleted) {
-                throw new OrderStatusNotFoundException("OrderStatus with ID " + id + " not found");
-            }
-            return true;
-        } catch (SQLException e) {
-            log.error("Error while deleting order status", e);
-            throw new DatabaseException("Failed to delete order status");
+        log.info("Deleting Order Status with ID: {}", id);
+        boolean deleted = orderStatusRepository.deleteOrderStatus(id);
+        if (!deleted) {
+            throw new OrderStatusNotFoundException("OrderStatus with ID " + id + " not found");
         }
+        return true;
     }
 }

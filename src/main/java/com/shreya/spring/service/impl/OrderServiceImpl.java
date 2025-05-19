@@ -1,5 +1,6 @@
 package com.shreya.spring.service.impl;
 
+import com.shreya.spring.exception.OrderNotFoundException;
 import com.shreya.spring.model.Order;
 import com.shreya.spring.repository.OrderRepository;
 import com.shreya.spring.service.OrderService;
@@ -12,7 +13,6 @@ import java.sql.SQLException;
 import java.util.List;
 
 @Service
-
 public class OrderServiceImpl implements OrderService {
 
     private final Logger log = LoggerFactory.getLogger(OrderServiceImpl.class);
@@ -22,37 +22,37 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     public boolean addOrder(Order order) throws SQLException {
-        log.info("add Order  {}", order);
+        log.info("Adding order: {}", order);
         return orderRepository.addOrder(order);
     }
 
     @Override
     public List<Order> retrieveAllOrders() {
-        log.info("all Order");
+        log.info("Retrieving all orders");
         return orderRepository.retrieveOrders();
     }
 
     @Override
     public Order retrieveOrderByIdAndType(int id, String type) {
-        log.info("Retrieving Order by ID: {} and Type: {}", id, type);
+        log.info("Getting order by ID: {} and Type: {}", id, type);
         return orderRepository.retrieveOrder(id, type);
     }
 
     @Override
     public String updateOrder(Order order) throws SQLException {
-        int orderId = order.getId();
-        String orderType = order.getType();
-
-        log.info("Updating order with ID: {} to new type: {}", orderId, orderType);
-
-        boolean updated = orderRepository.updateOrder(orderId, orderType);  // Update the order
-        return orderType;
+        boolean updated = orderRepository.updateOrder(order.getId(), order.getType());
+        if (!updated) {
+            throw new OrderNotFoundException("Order not found with ID: " + order.getId());
+        }
+        return order.getType();
     }
 
     @Override
     public boolean deleteOrder(int id) throws SQLException {
-        log.info("delete  Order by ID: {}", id);
-        return orderRepository.deleteOrder(id);
+        boolean deleted = orderRepository.deleteOrder(id);
+        if (!deleted) {
+            throw new OrderNotFoundException("Order not found with ID: " + id);
+        }
+        return true;
     }
-
 }

@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.sql.SQLException;
 import java.util.List;
+
 @RestController
 @RequestMapping("/api/cartItemManagement")
 public class CartItemController {
@@ -24,18 +25,13 @@ public class CartItemController {
     private CartItemService cartItemService;
 
     @PostMapping("/cartItem")
-    public ResponseEntity<String> addCartItem(@RequestBody CartItem cartItem) {
+    public ResponseEntity<String> addCartItem(@RequestBody CartItem cartItem) throws SQLException {
         log.info("API called: add cartItem {}", cartItem);
-        try {
-            boolean added = cartItemService.addCartItem(cartItem);
-            if (added) {
-                return ResponseEntity.status(HttpStatus.CREATED).body("CartItem added successfully.");
-            } else {
-                return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Failed to add CartItem.");
-            }
-        } catch (CartItemAddFailedException | SQLException ex) {
-            log.error("CartItem add failed: {}", ex.getMessage());
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(ex.getMessage());
+        boolean added = cartItemService.addCartItem(cartItem);
+        if (added) {
+            return ResponseEntity.status(HttpStatus.CREATED).body("CartItem added successfully.");
+        } else {
+            throw new CartItemAddFailedException("Failed to add CartItem.");
         }
     }
 
@@ -44,68 +40,48 @@ public class CartItemController {
         log.info("API called: get all cartItems");
         List<CartItem> cartItems = cartItemService.retrieveCartItem();
         if (cartItems == null || cartItems.isEmpty()) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+            throw new CartItemNotFoundException("No cart items found.");
         }
         return ResponseEntity.ok(cartItems);
     }
 
     @GetMapping("/cartItem/{id}")
-    public ResponseEntity<?> getCartItemById(@PathVariable int id) {
+    public ResponseEntity<CartItem> getCartItemById(@PathVariable int id) {
         log.info("API called: get CartItem by Id {}", id);
-        try {
-            CartItem cartItem = cartItemService.getCartItem(id);
-            return ResponseEntity.ok(cartItem);
-        } catch (CartItemNotFoundException ex) {
-            log.warn("CartItem not found: {}", ex.getMessage());
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(ex.getMessage());
-        }
+        CartItem cartItem = cartItemService.getCartItem(id);
+        return ResponseEntity.ok(cartItem);
     }
 
     @DeleteMapping("/cartItem/{id}")
     public ResponseEntity<String> deleteCartItem(@PathVariable int id) {
         log.info("API called: delete CartItem by Id {}", id);
-        try {
-            boolean deleted = cartItemService.deleteCartItem(id);
-            if (deleted) {
-                return ResponseEntity.ok("CartItem deleted successfully.");
-            } else {
-                return ResponseEntity.status(HttpStatus.NOT_FOUND).body("CartItem not found with id: " + id);
-            }
-        } catch (CartItemNotFoundException ex) {
-            log.warn("CartItem not found: {}", ex.getMessage());
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(ex.getMessage());
+        boolean deleted = cartItemService.deleteCartItem(id);
+        if (deleted) {
+            return ResponseEntity.ok("CartItem deleted successfully.");
+        } else {
+            throw new CartItemNotFoundException("CartItem not found with id: " + id);
         }
     }
 
     @PatchMapping("/cartItem")
     public ResponseEntity<String> updatePartialCartItem(@RequestBody CartItem cartItem) {
         log.info("API called: update partial CartItem {}", cartItem);
-        try {
-            boolean updated = cartItemService.updatePartialCartItem(cartItem);
-            if (updated) {
-                return ResponseEntity.ok("CartItem updated partially.");
-            } else {
-                return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Failed to update CartItem.");
-            }
-        } catch (CartItemUpdateFailedException ex) {
-            log.error("Partial update failed: {}", ex.getMessage());
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(ex.getMessage());
+        boolean updated = cartItemService.updatePartialCartItem(cartItem);
+        if (updated) {
+            return ResponseEntity.ok("CartItem updated partially.");
+        } else {
+            throw new CartItemUpdateFailedException("Failed to update CartItem partially.");
         }
     }
 
     @PutMapping("/cartItem")
-    public ResponseEntity<String> updateCartItem(@RequestBody CartItem cartItem) {
+    public ResponseEntity<String> updateCartItem(@RequestBody CartItem cartItem) throws SQLException {
         log.info("API called: update CartItem {}", cartItem);
-        try {
-            boolean updated = cartItemService.updateCartItem(cartItem);
-            if (updated) {
-                return ResponseEntity.ok("CartItem updated successfully.");
-            } else {
-                return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Failed to update CartItem.");
-            }
-        } catch (CartItemUpdateFailedException | SQLException ex) {
-            log.error("Update failed: {}", ex.getMessage());
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(ex.getMessage());
+        boolean updated = cartItemService.updateCartItem(cartItem);
+        if (updated) {
+            return ResponseEntity.ok("CartItem updated successfully.");
+        } else {
+            throw new CartItemUpdateFailedException("Failed to update CartItem.");
         }
     }
 }

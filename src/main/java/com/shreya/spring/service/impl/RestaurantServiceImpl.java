@@ -1,8 +1,10 @@
 package com.shreya.spring.service.impl;
 
+import com.shreya.spring.exception.*;
 import com.shreya.spring.model.Restaurant;
 import com.shreya.spring.repository.RestaurantRepository;
 import com.shreya.spring.service.RestaurantService;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,31 +23,40 @@ public class RestaurantServiceImpl implements RestaurantService {
 
     @Override
     public void insertRestaurant(Restaurant restaurant) throws SQLException {
-        log.info("add restaurant {}", restaurant);
-        restaurantRepository.addRestaurant(restaurant);
+        try {
+            restaurantRepository.addRestaurant(restaurant);
+        } catch (SQLException e) {
+            throw new RestaurantAlreadyExistsException("Restaurant already exists or failed to add.");
+        }
     }
 
     @Override
     public List<Restaurant> retrieveRestaurants() {
-        log.info("all restaurants");
         return restaurantRepository.retrieveRestaurants();
     }
 
     @Override
     public Restaurant getRestaurantById(int id) {
-        log.info("get Restaurant ById {}", id);
-        return restaurantRepository.retrieveRestaurant(id);
+        Restaurant restaurant = restaurantRepository.retrieveRestaurant(id);
+        if (restaurant == null) {
+            throw new RestaurantNotFoundException("Restaurant not found with ID: " + id);
+        }
+        return restaurant;
     }
 
     @Override
     public boolean deleteRestaurant(int id) throws SQLException {
-        log.info("delete Restaurant {}", id);
-        return restaurantRepository.deleteRestaurant(id);
+        if (!restaurantRepository.deleteRestaurant(id)) {
+            throw new RestaurantDeleteException("Failed to delete restaurant with ID: " + id);
+        }
+        return true;
     }
 
     @Override
     public boolean updateRestaurant(int id) throws SQLException {
-        log.info("Update Restaurant {}", id);
-        return restaurantRepository.updateRestaurant(id);
+        if (!restaurantRepository.updateRestaurant(id)) {
+            throw new RestaurantUpdateException("Failed to update restaurant with ID: " + id);
+        }
+        return true;
     }
 }

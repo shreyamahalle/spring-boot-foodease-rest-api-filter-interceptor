@@ -386,6 +386,10 @@ src/
 7. **BookingTable**
 8. **Payment**
 9. **Orderstatus**
+10. **Review**
+11. **MenuItem**
+12. **Notification**
+13. **Coupon**
 
 ## **🔧 Core Functionality**
 

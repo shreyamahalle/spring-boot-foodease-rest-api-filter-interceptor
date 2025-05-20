@@ -12,7 +12,7 @@
 <table align="center">
   <tr>
     <td>
-      <img src="https://github.com/user-attachments/assets/771cf93e-c2fd-4f65-a141-5e54b74a14ae" alt="FoodEase Logo" width="300" />
+      <img src="https://github.com/user-attachments/assets/771cf93e-c2fd-4f65-a141-5e54b74a14ae" alt="FoodEase Logo" width="400" />
     </td>
     <td>
       <img src="https://github.com/user-attachments/assets/51d95660-90d0-42cf-bbda-2232c0d5419f" alt="Project Screenshot" width="300" />

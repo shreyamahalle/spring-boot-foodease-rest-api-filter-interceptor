@@ -20,7 +20,7 @@
 </table>
 
 ## Foodease - Food Order Booking System
-<!-- <img src="https://github.com/user-attachments/assets/51d95660-90d0-42cf-bbda-2232c0d5419f"> -->
+
 ## Table of Contents
 
 - [Introduction](#introduction)

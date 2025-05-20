@@ -1,4 +1,3 @@
-
 <!--<p align="center">-->
 <!--   <img src="https://github.com/user-attachments/assets/771cf93e-c2fd-4f65-a141-5e54b74a14ae"  -->
 <!--        alt="FoodEase Logo"  -->
@@ -20,10 +19,8 @@
   </tr>
 </table>
 
-
-
 ## Foodease - Food Order Booking System
-<!-- <img src="https://github.com/user-attachments/assets/51d95660-90d0-42cf-bbda-2232c0d5419f"> -->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -138,7 +135,6 @@ This project is built with the following technologies:
 
 ## Getting Started
 
-
 ## Installation and Setup
 
 ### Prerequisites
@@ -169,9 +165,7 @@ Before you begin, ensure you have the following:
 ## 3. **Open the Project in Your Preferred IDE:**
 
 ```bash
-
  Launch your IDE (IntelliJ, Eclipse, etc.), and open the cloned repository.
-
 ```
 
 ## 4. **Set up the MySQL Database:**
@@ -386,6 +380,10 @@ src/
 7. **BookingTable**
 8. **Payment**
 9. **Orderstatus**
+10. **Review**
+11. **MenuItem**
+12. **Notification**
+13. **Coupon**
 
 ## **🔧 Core Functionality**
 
@@ -652,6 +650,7 @@ class OrderRepository {
   +delete()
 }
 ```
+
 
 ## Best Practices Followed
 - MVC Layering: Each layer has a single responsibility and adheres to open/closed principle.

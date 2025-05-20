@@ -1,10 +1,12 @@
 package com.shreya.spring.service.impl;
 
-import com.shreya.spring.exception.*;
+import com.shreya.spring.exception.RestaurantAlreadyExistsException;
+import com.shreya.spring.exception.RestaurantDeleteException;
+import com.shreya.spring.exception.RestaurantNotFoundException;
+import com.shreya.spring.exception.RestaurantUpdateException;
 import com.shreya.spring.model.Restaurant;
 import com.shreya.spring.repository.RestaurantRepository;
 import com.shreya.spring.service.RestaurantService;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

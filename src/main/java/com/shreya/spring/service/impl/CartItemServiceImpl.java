@@ -58,7 +58,7 @@ public class CartItemServiceImpl implements CartItemService {
     }
 
     @Override
-    public List<CartItem> retrieveCartItem(){
+    public List<CartItem> retrieveCartItem() {
         log.info("Retrieving all cart items");
         List<CartItem> items = cartItemRepository.retrieveCartItems();
         log.info("Retrieved {} cart items", items.size());

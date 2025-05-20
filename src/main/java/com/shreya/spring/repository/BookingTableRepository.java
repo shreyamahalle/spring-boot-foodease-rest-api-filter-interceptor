@@ -119,6 +119,7 @@ public class BookingTableRepository {
             return false;
         }
     }
+
     public boolean updateBooking(BookingTable bookingTable) {
         String query = "UPDATE booking_table SET customer_name = ?, restaurant_name = ?, booking_time = ?, number_of_people = ?, status = ? WHERE id = ?";
         log.info("Updating booking: {}", bookingTable);

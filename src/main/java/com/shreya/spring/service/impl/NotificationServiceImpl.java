@@ -3,7 +3,6 @@ package com.shreya.spring.service.impl;
 import com.shreya.spring.model.Notification;
 import com.shreya.spring.repository.NotificationRepository;
 import com.shreya.spring.service.NotificationService;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

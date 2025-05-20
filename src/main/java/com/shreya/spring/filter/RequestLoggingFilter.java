@@ -3,9 +3,9 @@ package com.shreya.spring.filter;
 import jakarta.servlet.*;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import org.springframework.stereotype.Component;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Component;
 
 import java.io.IOException;
 
@@ -26,6 +26,7 @@ public class RequestLoggingFilter implements Filter {
         // Continue with the next filter or request handler
         chain.doFilter(request, response);
     }
+
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
         logger.info("RequestLoggingFilter initialized");

@@ -2,7 +2,9 @@ package com.shreya.spring.config;
 
 import com.shreya.spring.interceptor.AuthInterceptor;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.web.servlet.config.annotation.*;
+import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
 public class WebConfig implements WebMvcConfigurer {
@@ -16,7 +18,8 @@ public class WebConfig implements WebMvcConfigurer {
                         "/order",            // Form submit POST path
                         "/css/**", "/js/**", "/images/**", "/static/**"
                 );
-}
+    }
+
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("/**")

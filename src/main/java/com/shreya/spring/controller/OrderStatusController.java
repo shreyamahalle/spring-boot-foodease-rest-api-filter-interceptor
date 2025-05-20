@@ -1,10 +1,9 @@
 package com.shreya.spring.controller;
 
+import com.shreya.spring.exception.DatabaseException;
+import com.shreya.spring.exception.OrderStatusNotFoundException;
 import com.shreya.spring.model.OrderStatus;
 import com.shreya.spring.service.OrderStatusService;
-import com.shreya.spring.exception.OrderStatusNotFoundException;
-import com.shreya.spring.exception.DatabaseException;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

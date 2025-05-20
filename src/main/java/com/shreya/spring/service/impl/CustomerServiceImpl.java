@@ -1,7 +1,8 @@
 package com.shreya.spring.service.impl;
+
+import com.shreya.spring.exception.CustomerNotFoundException;
 import com.shreya.spring.exception.CustomerServiceException;
 import com.shreya.spring.model.Customer;
-import com.shreya.spring.exception.CustomerNotFoundException;
 import com.shreya.spring.repository.CustomerRepository;
 import com.shreya.spring.service.CustomerService;
 import lombok.AllArgsConstructor;

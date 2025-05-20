@@ -135,7 +135,6 @@ This project is built with the following technologies:
 
 ## Getting Started
 
-
 ## Installation and Setup
 
 ### Prerequisites

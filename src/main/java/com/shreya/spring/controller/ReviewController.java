@@ -2,9 +2,11 @@ package com.shreya.spring.controller;
 
 import com.shreya.spring.model.Review;
 import com.shreya.spring.service.ReviewService;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.*;
 import org.springframework.web.bind.annotation.*;
 
 import java.sql.SQLException;
@@ -15,37 +17,41 @@ import java.util.List;
 public class ReviewController {
 
     private final Logger log = LoggerFactory.getLogger(ReviewController.class);
+
     @Autowired
     private ReviewService reviewService;
 
     @PostMapping("/review")
-    public boolean addReview(@RequestBody Review review) throws SQLException {
+    public ResponseEntity<String> addReview(@RequestBody Review review) throws SQLException {
         log.info("Adding review: {}", review);
-        return reviewService.addReview(review);
+        reviewService.addReview(review);
+        return ResponseEntity.status(HttpStatus.CREATED).body("Review added successfully!");
     }
 
     @GetMapping("/review")
-    public List<Review> getAllReviews() throws SQLException {
+    public ResponseEntity<List<Review>> getAllReviews() throws SQLException {
         log.info("Fetching all reviews");
-        return reviewService.getAllReviews();
+        return ResponseEntity.ok(reviewService.getAllReviews());
     }
 
     @GetMapping("/review/{id}")
-    public Review getReviewById(@PathVariable Long id) {
+    public ResponseEntity<Review> getReviewById(@PathVariable Long id) {
         log.info("Fetching review by ID: {}", id);
-        return reviewService.getReviewById(id);
+        return ResponseEntity.ok(reviewService.getReviewById(id));
     }
 
     @PutMapping("/review/{id}")
-    public boolean updateReview(@PathVariable Long id, @RequestBody Review review) {
+    public ResponseEntity<String> updateReview(@PathVariable Long id, @RequestBody Review review) {
         review.setId(id);
         log.info("Updating review with ID: {}", id);
-        return reviewService.updateReview(review);
+        reviewService.updateReview(review);
+        return ResponseEntity.ok("Review updated successfully!");
     }
 
     @DeleteMapping("/review/{id}")
-    public boolean deleteReview(@PathVariable Long id) {
+    public ResponseEntity<String> deleteReview(@PathVariable Long id) {
         log.info("Deleting review with ID: {}", id);
-        return reviewService.deleteReview(id);
+        reviewService.deleteReview(id);
+        return ResponseEntity.ok("Review deleted successfully!");
     }
 }

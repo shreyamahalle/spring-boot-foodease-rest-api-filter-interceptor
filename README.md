@@ -55,7 +55,6 @@
 - Password reset functionality
 - Promotional campaigns
 
-
 ## Introduction
 
 ## Project Overview

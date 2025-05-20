@@ -4,7 +4,10 @@
        width="300px"
        style="height: auto; display: block; margin: 0 auto;">
 </p>
-<img src="https://github.com/user-attachments/assets/51d95660-90d0-42cf-bbda-2232c0d5419f">
+<!-- <img src="https://github.com/user-attachments/assets/51d95660-90d0-42cf-bbda-2232c0d5419f"> -->
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/51d95660-90d0-42cf-bbda-2232c0d5419f" alt="Project Screenshot" width="1000"/>
+</p>
 
 
 ## Foodease - Food Order Booking System

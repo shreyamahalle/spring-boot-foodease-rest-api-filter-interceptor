@@ -657,6 +657,7 @@ class OrderRepository {
 }
 ```
 
+
 ## Best Practices Followed
 - MVC Layering: Each layer has a single responsibility and adheres to open/closed principle.
 - Exception Handling: Extendable @ControllerAdvice class can be added for custom error management.

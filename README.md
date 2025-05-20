@@ -165,9 +165,7 @@ Before you begin, ensure you have the following:
 ## 3. **Open the Project in Your Preferred IDE:**
 
 ```bash
-
  Launch your IDE (IntelliJ, Eclipse, etc.), and open the cloned repository.
-
 ```
 
 ## 4. **Set up the MySQL Database:**

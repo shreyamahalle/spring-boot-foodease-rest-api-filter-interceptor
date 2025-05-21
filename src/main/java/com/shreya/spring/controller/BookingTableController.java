@@ -39,7 +39,7 @@ public class BookingTableController {
 
         if (bookings == null || bookings.isEmpty()) {
             log.warn("No booking tables found.");
-            throw new NoBookingTablesFoundException();
+            throw new NoBookingTablesFoundException("table not found");
         }
         log.debug("Fetched {} bookings", bookings.size());
         return new ResponseEntity<>(bookingTableService.getAllBookings(),HttpStatus.OK);

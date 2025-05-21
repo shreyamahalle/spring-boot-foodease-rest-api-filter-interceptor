@@ -7,7 +7,7 @@
 <!-- <p align="center"> -->
 <!--   <img src="https://github.com/user-attachments/assets/51d95660-90d0-42cf-bbda-2232c0d5419f" alt="Project Screenshot" width="100"/> -->
 <!-- </p> -->
-[![Twitter](https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Ftwitter.com%2Fgeminikims)](https://twitter.com/geminikims)
+[![Twitter](https://twitter.com/https://x.com/shreyamahalle?t=spbu2fcdxoi30ditj-uiyw&s=09)](https://twitter.com/geminikims)
 [![Youtube](https://img.shields.io/youtube/channel/views/UCDh8zEDofOcrOMAOnSVL9Tg?label=Youtube&style=social)](https://www.youtube.com/@geminikims)
 [![CI](https://github.com/shreyamahalle/foodease-food-order-booking-system/actions/workflows/ci.yml/badge.svg)](https://github.com/shreyamahallefoodease-food-order-booking-system/actions/workflows/ci.yml)
 [![License](https://img.shields.io/badge/License-Apache%202.0-green.svg)](https://opensource.org/licenses/Apache-2.0)

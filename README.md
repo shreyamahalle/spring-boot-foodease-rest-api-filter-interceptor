@@ -12,7 +12,7 @@
   <img src="https://img.shields.io/twitter/follow/shreyamahalle?style=social" alt="Follow Shreya Mahalle on Twitter" />
 </a>
 
-[![CI](https://github.com/shreyamahalle/foodease-food-order-booking-system/actions/workflows/ci.yml/badge.svg)](https://github.com/shreyamahallefoodease-food-order-booking-system/actions/workflows/ci.yml)
+[![CI](https://github.com/shreyamahalle/your-repo-name/actions/workflows/ci.yml/badge.svg)](https://github.com/shreyamahalle/your-repo-name/actions/workflows/ci.yml)
 [![License](https://img.shields.io/badge/License-Apache%202.0-green.svg)](https://opensource.org/licenses/Apache-2.0)
 <table align="center">
   <tr>

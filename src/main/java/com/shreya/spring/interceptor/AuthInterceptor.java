@@ -18,7 +18,6 @@ public class AuthInterceptor implements HandlerInterceptor {
         logger.info("Interceptor - PreHandle: {}", request.getRequestURI());
         logger.info("Request start time: {}", startTime);
         request.setAttribute("startTime", startTime);
-
         return true;
     }
 

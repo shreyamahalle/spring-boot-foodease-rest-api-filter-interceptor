@@ -42,7 +42,7 @@ public class BookingTableController {
             throw new NoBookingTablesFoundException("table not found");
         }
         log.debug("Fetched {} bookings", bookings.size());
-        return new ResponseEntity<>(bookingTableService.getAllBookings(),HttpStatus.OK);
+        return new ResponseEntity<>(bookingTableService.getAllBookings(), HttpStatus.OK);
     }
 
     @GetMapping("/table/{id}")

@@ -16,7 +16,7 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(value = BookingAddFailedException.class)
     public ResponseEntity<String> handleBookingNotAddedException(BookingAddFailedException ex) {
         log.error("BookingNotAddedException: {}", ex.getMessage());
-        return new ResponseEntity<>("Booking not added",HttpStatus.INTERNAL_SERVER_ERROR);
+        return new ResponseEntity<>("Booking not added", HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
     // Handle NoBookingTablesFoundException

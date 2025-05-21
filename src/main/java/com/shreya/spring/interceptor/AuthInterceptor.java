@@ -17,7 +17,8 @@ public class AuthInterceptor implements HandlerInterceptor {
         long startTime = System.currentTimeMillis();
         logger.info("Interceptor - PreHandle: {}", request.getRequestURI());
         logger.info("Request start time: {}", startTime);
-        request.setAttribute("startTime",startTime);
+        request.setAttribute("startTime", startTime);
+
         return true;
     }
 
@@ -30,6 +31,15 @@ public class AuthInterceptor implements HandlerInterceptor {
     public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) throws Exception {
         long startTime = (Long) request.getAttribute("startTime");
         logger.info("Interceptor - AfterCompletion");
-        logger.info("Total request processing time {}",System.currentTimeMillis() - startTime);
+        logger.info("Total request processing time {}",(System.currentTimeMillis() - startTime));
+
+//        Object startTimeObj = request.getAttribute("startTime");
+//        logger.info("Interceptor - AfterCompletion");
+//
+//        if (startTimeObj instanceof Long startTime) {
+//            logger.info("Total request processing time: {} ms", (System.currentTimeMillis() - startTime));
+//        } else {
+//            logger.warn("Start time not found in request attributes.");
+//        }
     }
 }

@@ -8,9 +8,7 @@
 <!--   <img src="https://github.com/user-attachments/assets/51d95660-90d0-42cf-bbda-2232c0d5419f" alt="Project Screenshot" width="100"/> -->
 <!-- </p> -->
 
-<a href="https://x.com/shreyamahalle" target="_blank">
-  <img src="https://img.shields.io/twitter/follow/shreyamahalle?style=social" alt="Follow Shreya Mahalle on Twitter" />
-</a>
+[![Twitter](https://img.shields.io/twitter/follow/shreyamahalle?style=social)](https://x.com/shreyamahalle)
 
 [![CI](https://github.com/shreyamahalle/spring-boot-foodease-rest-api-filter-interceptor/actions/workflows/ci.yml/badge.svg)](https://github.com/shreyamahalle/spring-boot-foodease-rest-api-filter-interceptor/actions/workflows/ci.yml)
 

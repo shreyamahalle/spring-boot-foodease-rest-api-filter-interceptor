@@ -13,27 +13,27 @@ public class GlobalExceptionHandler {
     private final Logger log = LoggerFactory.getLogger(GlobalExceptionHandler.class);
 
     // Handle BookingNotAddedException
-    @ExceptionHandler(BookingAddFailedException.class)
+    @ExceptionHandler(value = BookingAddFailedException.class)
     public ResponseEntity<String> handleBookingNotAddedException(BookingAddFailedException ex) {
         log.error("BookingNotAddedException: {}", ex.getMessage());
-        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(ex.getMessage());
+        return new ResponseEntity<>("Booking not added",HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
     // Handle NoBookingTablesFoundException
-    @ExceptionHandler(NoBookingTablesFoundException.class)
-    public ResponseEntity<String> handleNoBookingTablesFoundException(NoBookingTablesFoundException ex) {
+    @ExceptionHandler(value = NoBookingTablesFoundException.class)
+    public ResponseEntity<Object> handleNoBookingTablesFoundException(NoBookingTablesFoundException ex) {
         log.warn("NoBookingTablesFoundException: {}", ex.getMessage());
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(ex.getMessage());
     }
 
     // Handle generic RuntimeException
-    @ExceptionHandler(RuntimeException.class)
+    @ExceptionHandler(value = RuntimeException.class)
     public ResponseEntity<String> handleRuntimeException(RuntimeException ex) {
         log.error("RuntimeException: ", ex);
         return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Internal server error. Please try again later.");
     }
 
-    @ExceptionHandler(IdNotFoundException.class)
+    @ExceptionHandler(value = IdNotFoundException.class)
     public ResponseEntity<String> handleIdNotFoundException(IdNotFoundException ex) {
         log.warn("IdNotFoundException: {}", ex.getMessage());
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(ex.getMessage());

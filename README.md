@@ -10,13 +10,10 @@
 
 [![Twitter](https://img.shields.io/twitter/follow/shreyamahalle?style=social)](https://x.com/shreyamahalle)
 [![License](https://img.shields.io/badge/License-Apache%202.0-green.svg)](https://opensource.org/licenses/Apache-2.0)
-
-[![CI](https://github.com/shreyamahalle/spring-boot-foodease-rest-api-filter-interceptor/actions/workflows/ci.yml/badge.svg)](https://github.com/shreyamahalle/spring-boot-foodease-rest-api-filter-interceptor/actions/workflows/ci.yml)
 ![GitHub language count](https://img.shields.io/github/languages/count/shreyamahalle/spring-boot-foodease-rest-api-filter-interceptor)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/shreyamahalle/spring-boot-foodease-rest-api-filter-interceptor)
 ![GitHub issues](https://img.shields.io/github/issues/shreyamahalle/spring-boot-foodease-rest-api-filter-interceptor)
 ![GitHub closed pull requests](https://img.shields.io/github/issues-pr-closed/shreyamahalle/spring-boot-foodease-rest-api-filter-interceptor)
-![Twitter Follow](https://img.shields.io/twitter/follow/shreyamahalle?style=social)
 ![GitHub followers](https://img.shields.io/github/followers/shreyamahalle?style=social)
 
 

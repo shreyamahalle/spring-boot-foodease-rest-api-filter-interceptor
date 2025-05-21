@@ -16,6 +16,7 @@ public class AuthInterceptor implements HandlerInterceptor {
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         long startTime = System.currentTimeMillis();
         logger.info("Interceptor - PreHandle: {}", request.getRequestURI());
+        logger.info("Request start time: {}", startTime);
         request.setAttribute("startTime",startTime);
         return true;
     }

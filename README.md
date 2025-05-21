@@ -7,6 +7,16 @@
 <!-- <p align="center"> -->
 <!--   <img src="https://github.com/user-attachments/assets/51d95660-90d0-42cf-bbda-2232c0d5419f" alt="Project Screenshot" width="100"/> -->
 <!-- </p> -->
+
+[![Twitter](https://img.shields.io/twitter/follow/shreyamahalle?style=social)](https://x.com/shreyamahalle)
+[![License](https://img.shields.io/badge/License-Apache%202.0-green.svg)](https://opensource.org/licenses/Apache-2.0)
+![GitHub language count](https://img.shields.io/github/languages/count/shreyamahalle/spring-boot-foodease-rest-api-filter-interceptor)
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/shreyamahalle/spring-boot-foodease-rest-api-filter-interceptor)
+![GitHub issues](https://img.shields.io/github/issues/shreyamahalle/spring-boot-foodease-rest-api-filter-interceptor)
+![GitHub closed pull requests](https://img.shields.io/github/issues-pr-closed/shreyamahalle/spring-boot-foodease-rest-api-filter-interceptor)
+![GitHub followers](https://img.shields.io/github/followers/shreyamahalle?style=social)
+
+
 <table align="center">
   <tr>
     <td>

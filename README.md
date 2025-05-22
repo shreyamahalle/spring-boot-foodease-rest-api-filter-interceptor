@@ -78,6 +78,7 @@
 ## Project Overview
 
 The Spring Food Order & Booking Management System provides a modular approach to managing:
+**FoodEase** is a comprehensive Spring Boot-based solution that digitalizes end-to-end food ordering operations, serving three key stakeholders:
 
 - Customers
 - Restaurants
@@ -101,7 +102,13 @@ tracking — all managed using a clean layered architecture
 ```bash
 Controller → Service → Repository → Model → DB
 ```
-
+```
+graph LR
+    A[FoodEase] --> B(POS Systems)
+    A --> C(Payment Gateways)
+    A --> D(Logistics Providers)
+    A --> E(Marketing Platforms)
+```
 ## Features
 
 ## Key Features

@@ -75,7 +75,7 @@
 
 ## Project Overview
 
-The Spring Booking Management System provides a modular approach to managing:
+The Spring Food Order & Booking Management System provides a modular approach to managing:
 
 - Customers
 - Restaurants
@@ -149,6 +149,43 @@ Before you begin, ensure you have the following:
 - **Apache Tomcat**: A servlet container for running your web application.
 - **IDE**: Use IntelliJ IDEA, Eclipse, or any Java IDE you're comfortable with.
 - **Git (optional)**: For version control and easier collaboration.
+
+  ## 🛠️ Prerequisites
+
+Before deploying FoodEase, ensure your development environment meets these requirements:
+
+### Core Requirements
+| Component           | Version       | Installation Guide                      | Verification Command          |
+|---------------------|---------------|-----------------------------------------|-------------------------------|
+| Java JDK            | 21+           | [Oracle JDK](https://www.oracle.com/java/technologies/downloads/) or [OpenJDK](https://openjdk.org/install/) | `java -version` |
+| Apache Maven        | 3.9.x         | [Maven Install Guide](https://maven.apache.org/install.html) | `mvn -v` |
+| MySQL Server        | 8.0+          | [MySQL Downloads](https://dev.mysql.com/downloads/) | `mysql --version` |
+| Docker Engine       | 24.0+         | [Docker Installation](https://docs.docker.com/engine/install/) | `docker --version` |
+
+### Optional Tools
+| Tool                | Recommended For                      | Installation Link                      |
+|---------------------|--------------------------------------|----------------------------------------|
+| IntelliJ IDEA Ultimate | Advanced Development                | [Download IDEA](https://www.jetbrains.com/idea/download/) |
+| Postman            | API Testing                         | [Get Postman](https://www.postman.com/downloads/) |
+| Kubernetes CLI     | Production Deployment               | [Install kubectl](https://kubernetes.io/docs/tasks/tools/) |
+
+### Environment Verification
+```bash
+# Verify Java installation
+java -version
+# Should show: java version "21.x.x"
+
+# Verify Maven
+mvn --version
+# Should show: Apache Maven 3.9.x
+
+# Verify Docker
+docker compose version
+# Should show: Docker Compose version v2.x.x
+
+# Verify MySQL
+mysql --version
+# Should show: mysql Ver 8.0.x for Linux/macOS
 
 ## Steps to Get Started
 

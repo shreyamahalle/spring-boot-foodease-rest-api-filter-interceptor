@@ -247,6 +247,24 @@ mysql --version
    ```
 ## API Endpoints (CRUD)
 
+## 🌐 API Endpoints (CURL Commands)
+
+### Customer Management
+
+**Create Customer**
+```bash
+curl -X POST 'http://localhost:8080/api/customer' \
+-H 'Content-Type: application/json' \
+-H 'Authorization: Bearer YOUR_ACCESS_TOKEN' \
+-d '{
+  "name": "John Doe",
+  "username": "johndoe",
+  "mobileNo": "1234567890",
+  "city": "Mumbai",
+  "area": "Andheri"
+}'
+```
+
 ### 🧍 Customer APIs
 
 | Method | Endpoint             | Description               |

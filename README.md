@@ -15,6 +15,8 @@
 ![GitHub issues](https://img.shields.io/github/issues/shreyamahalle/spring-boot-foodease-rest-api-filter-interceptor)
 ![GitHub closed pull requests](https://img.shields.io/github/issues-pr-closed/shreyamahalle/spring-boot-foodease-rest-api-filter-interceptor)
 ![GitHub followers](https://img.shields.io/github/followers/shreyamahalle?style=social)
+![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.4.6-brightgreen.svg)
+
 
 
 <table align="center">

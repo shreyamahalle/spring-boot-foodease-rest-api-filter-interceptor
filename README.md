@@ -188,16 +188,14 @@ Before you begin, ensure you have the following:
 ```
 
 ## 6. **Configure Your MySQL Connection:**
-
+```
 - In your project configuration (application.properties), set the MySQL database connection details.
-
 - Example application.properties:
-
 - spring.datasource.url=jdbc:mysql://localhost:3306/booking_management
 - spring.datasource.username=root
 - spring.datasource.password=your_password
 - spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
-
+```
 ## 7. **Compile and Run the Application:**
 
 - Locate Main.java in your IDE.

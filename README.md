@@ -450,10 +450,7 @@ src/
 13. **Coupon**
 
 
-
-
-
-## 🛠️ System Functionality
+## System Functionality
 
 ### Core Modules
 

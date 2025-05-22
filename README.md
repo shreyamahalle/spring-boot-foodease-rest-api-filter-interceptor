@@ -249,21 +249,70 @@ mysql --version
 
 ## 🌐 API Endpoints (CURL Commands)
 
-### Customer Management
 
-**Create Customer**
+## Get All Customers
 ```bash
-curl -X POST 'http://localhost:8080/api/customer' \
+curl -X GET 'http://localhost:8080/api/customer' \
+-H 'Authorization: Bearer YOUR_ACCESS_TOKEN'
+```
+## Get Customer by ID
+```bash
+curl -X GET 'http://localhost:8080/api/customer/6' \
+-H 'Authorization: Bearer YOUR_ACCESS_TOKEN'
+```
+## Update Customer
+```bash
+curl -X PUT 'http://localhost:8080/api/customer/6' \
 -H 'Content-Type: application/json' \
 -H 'Authorization: Bearer YOUR_ACCESS_TOKEN' \
 -d '{
-  "name": "John Doe",
-  "username": "johndoe",
-  "mobileNo": "1234567890",
-  "city": "Mumbai",
-  "area": "Andheri"
+  "name": "John Doe Updated",
+  "area": "Bandra"
 }'
 ```
+## Delete Customer
+```bash
+curl -X DELETE 'http://localhost:8080/api/customer/6' \
+-H 'Authorization: Bearer YOUR_ACCESS_TOKEN'
+```
+## Restaurant Management
+## Create Restaurant
+```bash
+curl -X POST 'http://localhost:8080/api/restaurant' \
+-H 'Content-Type: application/json' \
+-d '{
+  "name": "Pizza Palace",
+  "city": "Mumbai",
+  "area": "Bandra",
+  "cuisineType": "Italian"
+}'
+```
+## Get Restaurant Menu
+```bash
+curl -X GET 'http://localhost:8080/api/restaurant/1/menu' \
+-H 'Accept: application/json'
+```
+## Order Management
+## Place Order
+```bash
+curl -X POST 'http://localhost:8080/api/order' \
+-H 'Content-Type: application/json' \
+-H 'Authorization: Bearer YOUR_ACCESS_TOKEN' \
+-d '{
+  "customerId": 1,
+  "restaurantId": 2,
+  "items": [
+    {
+      "menuItemId": 5,
+      "quantity": 2,
+      "specialInstructions": "No onions"
+    }
+  ],
+  "couponCode": "SAVE10"
+}' 
+```
+
+
 
 ### 🧍 Customer APIs
 

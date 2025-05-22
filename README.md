@@ -335,33 +335,39 @@ POST /api/orders
   "deliveryAgentId": 3
 }
 ```
+
 ## Module Responsibilities
+```properties
 This project includes full CRUD and business logic support for the following modules:
 
-- Customer – Registration, login, update profile
+1 Customer – Registration, login, update profile
 
-- DeliveryAgent – Assign orders, update status
+2 DeliveryAgent – Assign orders, update status
 
-- Order – Place, view, update, cancel orders
+3 Order – Place, view, update, cancel orders
 
-- Restaurant – Add/view restaurant info and menus
+4 Restaurant – Add/view restaurant info and menus
 
-- Feedback – Customer feedback on orders or service
+5 Feedback – Customer feedback on orders or service
 
-- Review – Star ratings and reviews for restaurants
+6 Review – Star ratings and reviews for restaurants
 
-- BookingTable – Reserve tables at restaurants
+7 BookingTable – Reserve tables at restaurants
 
-- Payment – Payment processing and tracking
+8 Payment – Payment processing and tracking
 
-- OrderStatus – Track real-time status of orders
+9 OrderStatus – Track real-time status of orders
 
-- MenuItem – Add/update menu items
+10 MenuItem – Add/update menu items
 
-- Notification – Real-time or scheduled alerts
+11 Notification – Real-time or scheduled alerts
 
-- Coupon – Apply discount codes to orders
+12 Coupon – Apply discount codes to orders
 
+13 Cart Item – Add/remove items to cart before checkout.
+
+
+```
 ## Spring Annotations
 
 - Overview of Spring Annotations

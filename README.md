@@ -252,13 +252,13 @@ mysql --version
 
 ## Get All Customers
 ```bash
-curl -X GET 'http://localhost:8080/api/customer' \
--H 'Authorization: Bearer YOUR_ACCESS_TOKEN'
+curl --location 'http://localhost:8080/api/customerManagement/customer' \
+--header 'Content-Type: application/json'
 ```
 ## Get Customer by ID
 ```bash
-curl -X GET 'http://localhost:8080/api/customer/6' \
--H 'Authorization: Bearer YOUR_ACCESS_TOKEN'
+curl --location 'http://localhost:8080/api/customerManagement/customer/6' \
+--header 'Content-Type: application/json'
 ```
 ## Update Customer
 ```bash
@@ -272,8 +272,16 @@ curl -X PUT 'http://localhost:8080/api/customer/6' \
 ```
 ## Delete Customer
 ```bash
-curl -X DELETE 'http://localhost:8080/api/customer/6' \
--H 'Authorization: Bearer YOUR_ACCESS_TOKEN'
+curl --location --request DELETE 'http://localhost:8080/customers' \
+--header 'Content-Type: application/json' \
+--data '{
+  "id": 1,
+  "name": "Shreya",
+  "city": "Pune",
+  "mobileNo": 9876543210,
+  "age": 25
+}
+'
 ```
 ## Restaurant Management
 ## Create Restaurant

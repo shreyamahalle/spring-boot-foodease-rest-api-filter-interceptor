@@ -49,6 +49,9 @@
 # **foodease-food-order-booking-system**
 
 **Foodease** is a Java Spring-based online food ordering and booking system. It allows customers to register, browse restaurants, place orders, and receive deliveries from nearby agents. The system is modular, scalable, and designed for real-world business needs.
+```bash
+Controller → Service → Repository → Model → DB
+```
 
 > **Use case**: A food ordering platform where customers can register, explore nearby restaurants, place orders, and get deliveries from available agents based on location and serviceability.
 

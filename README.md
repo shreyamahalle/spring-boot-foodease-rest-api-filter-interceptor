@@ -165,7 +165,7 @@ Before deploying FoodEase, ensure your development environment meets these requi
 ### Optional Tools
 | Tool                | Recommended For                      | Installation Link                      |
 |---------------------|--------------------------------------|----------------------------------------|
-| IntelliJ IDEA Ultimate | Advanced Development                | [Download IDEA](https://www.jetbrains.com/idea/download/) |
+| IntelliJ IDEA       | Advanced Development                | [Download IDEA](https://www.jetbrains.com/idea/download/) |
 | Postman            | API Testing                         | [Get Postman](https://www.postman.com/downloads/) |
 | Kubernetes CLI     | Production Deployment               | [Install kubectl](https://kubernetes.io/docs/tasks/tools/) |
 

@@ -36,9 +36,10 @@
 - [Module Responsibilities](#Module-Responsibilities)
 - [Spring Annotations](#Spring-Annotations)
 - [System Functionality](#System-Functionality)
-- [Code Structure ](#Code-Structure )
+- [Code Structure ](#Code-Structure)
 - [Database Schema (POJO Classes)](#Database-Schema-(POJO-Classes))
 - [Class Diagram](#Class-Diagram)
+- [API Endpoints (CURL Commands)](#API-Endpoints-(CURL-Commands))
 - [Contact](#contact)
 - [Best Practices Followed](#Best-Practices-Followed)
 - [Future Scope](#Future-Scope)
@@ -245,9 +246,8 @@ mysql --version
    ```bash
    mvn clean install
    ```
-## API Endpoints (CRUD)
 
-## 🌐 API Endpoints (CURL Commands)
+## API Endpoints (CURL Commands)
 
 
 ## Get All Customers

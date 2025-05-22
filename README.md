@@ -8,7 +8,8 @@
 ![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.4.6-brightgreen.svg)
 [![Developed with IntelliJ IDEA](https://img.shields.io/badge/IntelliJ%20IDEA-Supported-blue.svg)](https://www.jetbrains.com/idea/)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](https://linkedin.com/in/shreyamahalle) &nbsp;&nbsp;
-[![Twitter](https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://x.com/shreyamahalle)
+[![Twitter](https://img.shields.io/badge/Twitter-1DA1F2?style=flat-square&logo=twitter&logoColor=white)](https://x.com/shreyamahalle)
+
 <table align="center">
   <tr>
     <td>

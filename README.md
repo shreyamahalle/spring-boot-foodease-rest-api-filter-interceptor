@@ -677,9 +677,6 @@ Shreya Mahalle
 [<img src="https://img.icons8.com/material-rounded/24/000000/github.png" alt="GitHub"/>](https://github.com/shreyamahalle)
 [<img src="https://img.icons8.com/material-rounded/24/0077B5/linkedin.png" alt="LinkedIn"/>](https://linkedin.com/in/shreyamahalle)
 
-[![Twitter](https://img.shields.io/twitter/follow/shreyamahalle?style=social)](https://x.com/shreyamahalle) &nbsp;&nbsp;
-[![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/shreyamahalle) &nbsp;&nbsp;
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](https://linkedin.com/in/shreyamahalle) &nbsp;&nbsp;
 
 ## 🌐 Connect With Me
 
@@ -700,7 +697,7 @@ Shreya Mahalle
   </a>
   
   <!-- Email -->
-  <a href="mailto:shreya.mahalle@example.com" style="margin: 0 10px;">
+  <a href="mailto:shreyamahalle8@example.com" style="margin: 0 10px;">
     <img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" height="28"/>
   </a>
 </div>

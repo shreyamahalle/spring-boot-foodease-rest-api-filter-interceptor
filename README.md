@@ -17,8 +17,7 @@
 ![GitHub followers](https://img.shields.io/github/followers/shreyamahalle?style=social)
 ![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.4.6-brightgreen.svg)
 [![Developed with IntelliJ IDEA](https://img.shields.io/badge/IntelliJ%20IDEA-Supported-blue.svg)](https://www.jetbrains.com/idea/)
-[![Maven Central](https://img.shields.io/maven-central/v/com.github.binarywang/wx-java.svg?label=Maven)](https://search.maven.org/artifact/com.github.binarywang/wx-java)
-[![GitHub release](https://img.shields.io/github/release/binarywang/WxJava.svg?label=Release)](https://github.com/binarywang/WxJava/releases)
+
 
 <table align="center">
   <tr>

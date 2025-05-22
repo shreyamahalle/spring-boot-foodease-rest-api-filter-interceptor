@@ -442,6 +442,48 @@ src/
 12. **Notification**
 13. **Coupon**
 
+
+
+
+
+## 🛠️ System Functionality
+
+### Core Modules
+
+| Module               | Key Features                                                                 | Technical Implementation                          |
+|----------------------|-----------------------------------------------------------------------------|---------------------------------------------------|
+| **Customer**         | - JWT Authentication<br>- Profile Management<br>- Order History            | Spring Security, OAuth2, Redis Cache              |
+| **DeliveryAgent**    | - Real-time Tracking<br>- Capacity Management<br>- Route Optimization      | WebSocket, Google Maps API, Kafka Events          |
+| **Order**           | - State Machine Workflow<br>- Payment Integration<br>- SAGA Pattern        | Spring State Machine, Stripe API, Axon Framework  |
+| **Restaurant**      | - Menu Management<br>- Inventory Control<br>- Service Area Configuration   | Spring Data JPA, Geospatial Queries               |
+
+### Supporting Modules
+
+| Module               | Functionality                                                             | Technologies Used                              |
+|----------------------|---------------------------------------------------------------------------|-----------------------------------------------|
+| **Payment**         | - Multi-gateway Support<br>- Idempotent Transactions<br>- Refund Handling | Stripe SDK, Idempotency Keys, Circuit Breaker |
+| **MenuItem**        | - Dynamic Pricing<br>- Dietary Tagging<br>- Availability Scheduling       | Elasticsearch, Time-based Cache               |
+| **Notification**    | - Multi-channel (SMS/Email/Push)<br>- Template Engine<br>- Read Receipts | Twilio, SendGrid, Firebase Cloud Messaging    |
+
+### Advanced Features
+
+```mermaid
+sequenceDiagram
+    Customer->>+OrderService: Place Order
+    OrderService->>+PaymentService: Process Payment
+    PaymentService-->>-OrderService: Confirmation
+    OrderService->>+RestaurantService: Validate Order
+    RestaurantService-->>-OrderService: Acknowledgement
+    OrderService->>+DeliveryService: Assign Agent
+    DeliveryService-->>-Customer: Tracking Link
+
+
+
+
+
+
+    
+
 ## **🔧 Core Functionality**
 
 1. Customer Management

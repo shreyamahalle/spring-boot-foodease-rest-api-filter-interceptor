@@ -680,6 +680,11 @@ Shreya Mahalle
 [![GitHub](https://img.shields.io/badge/GitHub-000000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/shreyamahalle) &nbsp;&nbsp;
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/shreyamahalle)
 
+[![Twitter](https://img.shields.io/twitter/follow/shreyamahalle?style=social&logo=twitter)](https://x.com/shreyamahalle)  
+[![GitHub](https://img.shields.io/badge/GitHub-000000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/shreyamahalle)  
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/shreyamahalle)
+
+
 
 
 <div align="center"> <sub>Built with ❤︎ by Shreya Mahalle</sub> </div> 

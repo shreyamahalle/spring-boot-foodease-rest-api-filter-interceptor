@@ -670,13 +670,6 @@ class OrderRepository {
 
 ---
 
-## Author
-
-Shreya Mahalle  
-
-[<img src="https://img.icons8.com/material-rounded/24/000000/github.png" alt="GitHub"/>](https://github.com/shreyamahalle)
-[<img src="https://img.icons8.com/material-rounded/24/0077B5/linkedin.png" alt="LinkedIn"/>](https://linkedin.com/in/shreyamahalle)
-
 
 ## 🌐 Connect With Me
 

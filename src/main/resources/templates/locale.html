@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8" />
     <title>Home</title>
@@ -7,16 +7,16 @@
     <script src="i18.js"></script>
 </head>
 <body>
-<h1 th:text="#{welcome.text}"></h1>
+<h1 th:text="#{welcome.text}">Welcome Text</h1>
 <br /><br />
-<span th:text="#{lang.change}"></span>:
+<span th:text="#{lang.change}">Change Language</span>:
 <select id="locales">
-    <option value=""></option>
-    <option value="en" th:text="#{lang.eng}"></option>
-    <option value="fr" th:text="#{lang.fr}"></option>
-    <option value="hn" th:text="#{lang.hn}"></option>
-    <option value="mr" th:text="#{lang.mr}"></option>
-    <option value="ta" th:text="#{lang.ta}"></option>
+    <option value="">--Select--</option>
+    <option value="en" th:text="#{lang.eng}">English</option>
+    <option value="fr" th:text="#{lang.fr}">French</option>
+    <option value="hn" th:text="#{lang.hn}">Hindi</option>
+    <option value="mr" th:text="#{lang.mr}">Marathi</option>
+    <option value="ta" th:text="#{lang.ta}">Tamil</option>
 </select>
 </body>
 </html>

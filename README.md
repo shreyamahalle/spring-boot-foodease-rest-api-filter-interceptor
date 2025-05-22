@@ -17,7 +17,6 @@
 ![GitHub followers](https://img.shields.io/github/followers/shreyamahalle?style=social)
 ![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.4.6-brightgreen.svg)
 [![Developed with IntelliJ IDEA](https://img.shields.io/badge/IntelliJ%20IDEA-Supported-blue.svg)](https://www.jetbrains.com/idea/)
-[![GitHub release](https://img.shields.io/github/release/shreyamahalle/spring-boot-foodease-rest-api-filter-interceptor.svg?label=Release)](https://github.com/shreyamahalle/spring-boot-foodease-rest-api-filter-interceptor/releases)
 
 
 <table align="center">

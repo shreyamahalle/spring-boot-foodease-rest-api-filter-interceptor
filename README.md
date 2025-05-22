@@ -97,10 +97,10 @@ The Spring Food Order & Booking Management System provides a modular approach to
 - **Email Notifications**
 
 It mimics real-world operations like customer registration, restaurant assignment, order placing, and delivery
-tracking — all managed using a clean layered architecture ```bash
+tracking — all managed using a clean layered architecture 
+```bash
 Controller → Service → Repository → Model → DB
 ```
-
 ---
 
 ## Features

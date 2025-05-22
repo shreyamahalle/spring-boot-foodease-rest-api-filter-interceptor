@@ -681,15 +681,15 @@ Shreya Mahalle
 [![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/shreyamahalle) &nbsp;&nbsp;
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](https://linkedin.com/in/shreyamahalle) &nbsp;&nbsp;
 
-<div align="center">
-  <a href="https://github.com/shreyamahalle">
-    <img src="https://img.icons8.com/ios-glyphs/30/FFFFFF/github.png" alt="GitHub"/>
+<div align="center" style="background-color:#000; padding:10px; border-radius:8px; width:fit-content; margin:auto;">
+  <a href="https://github.com/shreyamahalle" target="_blank" style="margin: 0 15px;">
+    <img src="https://img.icons8.com/ios-glyphs/30/FFFFFF/github.png" alt="GitHub" />
   </a>
-  <a href="https://linkedin.com/in/shreyamahalle">
-    <img src="https://img.icons8.com/ios-glyphs/30/FFFFFF/linkedin.png" alt="LinkedIn"/>
+  <a href="https://linkedin.com/in/shreyamahalle" target="_blank" style="margin: 0 15px;">
+    <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white" alt="LinkedIn" />
   </a>
-  <a href="mailto:shreyamahalle8@example.com">
-    <img src="https://img.icons8.com/ios-glyphs/30/FFFFFF/gmail.png" alt="Email"/>
+  <a href="mailto:shreyamahalle8@example.com" style="margin: 0 15px;">
+    <img src="https://img.icons8.com/ios-glyphs/30/FFFFFF/gmail.png" alt="Email" />
   </a>
 </div>
 

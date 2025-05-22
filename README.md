@@ -668,7 +668,6 @@ class OrderRepository {
 - Dockerization and deployment to Kubernetes or AWS ECS
 
 ---
-<div align="center"> <sub>Built with ❤︎ by Shreya Mahalle and contributors</sub> </div> ```
 
 ## Author
 
@@ -676,4 +675,5 @@ Shreya Mahalle
 [GitHub](https://github.com/shreyamahalle) | [LinkedIn](https://linkedin.com/in/shreyamahalle)
 
 ---
+<div align="center"> <sub>Built with ❤︎ by Shreya Mahalle and contributors</sub> </div> ```
 

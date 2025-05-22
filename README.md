@@ -674,6 +674,5 @@ class OrderRepository {
 Shreya Mahalle  
 [GitHub](https://github.com/shreyamahalle) | [LinkedIn](https://linkedin.com/in/shreyamahalle)
 
----
-<div align="center"> <sub>Built with ❤︎ by Shreya Mahalle and contributors</sub> </div> ```
+<div align="center"> <sub>Built with ❤︎ by Shreya Mahalle</sub> </div> 
 

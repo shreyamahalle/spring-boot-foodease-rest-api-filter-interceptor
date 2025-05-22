@@ -35,6 +35,7 @@
 - [Postman Collection](#Postman-Collection)
 - [Module Responsibilities](#Module-Responsibilities)
 - [Spring Annotations](#Spring-Annotations)
+- [System Functionality](#System-Functionality)
 - [Code Structure ](#Code-Structure )
 - [Database Schema (POJO Classes)](#Database-Schema-(POJO-Classes))
 - [Class Diagram](#Class-Diagram)

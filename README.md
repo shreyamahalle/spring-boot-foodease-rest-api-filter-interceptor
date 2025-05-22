@@ -101,7 +101,6 @@ tracking — all managed using a clean layered architecture
 ```bash
 Controller → Service → Repository → Model → DB
 ```
----
 
 ## Features
 
@@ -115,8 +114,6 @@ Controller → Service → Repository → Model → DB
 -  Easy-to-Follow Structure: Well-documented, clean code for learning and demonstration.
 -  Layered Architecture: Clean separation of concerns.
 -  REST API: Full CRUD functionality exposed via REST.
-
----
 
 ## Technology Stack
 

@@ -198,7 +198,7 @@ mysql --version
 ## 2. **Navigate to the Project Directory:**
 
 ```bash
- cd spring-boot-booking-management-project
+ cd spring-boot-foodease-rest-api-filter-interceptor
 ```
 
 ## 3. **Open the Project in Your Preferred IDE:**
@@ -336,11 +336,31 @@ POST /api/orders
 }
 ```
 ## Module Responsibilities
+This project includes full CRUD and business logic support for the following modules:
 
-- **Customer**: Handles user registration, city/area resolution, and personalization.
-- **Restaurant**: CRUD operations and geo-based filtering logic.
-- **Order**: Links Customers to Restaurants; encapsulates logistics and contact info.
-- **Delivery Agent**: Assignments and delivery lifecycle management.
+- Customer – Registration, login, update profile
+
+- DeliveryAgent – Assign orders, update status
+
+- Order – Place, view, update, cancel orders
+
+- Restaurant – Add/view restaurant info and menus
+
+- Feedback – Customer feedback on orders or service
+
+- Review – Star ratings and reviews for restaurants
+
+- BookingTable – Reserve tables at restaurants
+
+- Payment – Payment processing and tracking
+
+- OrderStatus – Track real-time status of orders
+
+- MenuItem – Add/update menu items
+
+- Notification – Real-time or scheduled alerts
+
+- Coupon – Apply discount codes to orders
 
 ## Spring Annotations
 

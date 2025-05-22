@@ -47,7 +47,6 @@ public class NotificationScheduler {
                     }
                 }
             }
-
         } catch (Exception e) {
             logger.error("Error during scheduler task: ", e);
         }

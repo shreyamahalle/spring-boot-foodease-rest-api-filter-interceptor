@@ -30,7 +30,7 @@ public class AuthInterceptor implements HandlerInterceptor {
     public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) throws Exception {
         long startTime = (Long) request.getAttribute("startTime");
         logger.info("Interceptor - AfterCompletion");
-        logger.info("Total request processing time {}",(System.currentTimeMillis() - startTime));
+        logger.info("Total request processing time {}", (System.currentTimeMillis() - startTime));
 
 //        Object startTimeObj = request.getAttribute("startTime");
 //        logger.info("Interceptor - AfterCompletion");

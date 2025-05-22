@@ -319,65 +319,6 @@ curl -X POST 'http://localhost:8080/api/order' \
   "couponCode": "SAVE10"
 }' 
 ```
-
-
-
-### 🧍 Customer APIs
-
-| Method | Endpoint             | Description               |
-|--------|----------------------|---------------------------|
-| GET    | `/api/customer`     | Get all customers         |
-| GET    | `/api/customer/{id}`| Get customer by ID        |
-| POST   | `/api/customer`     | Add a new customer        |
-| PUT    | `/api/customer/{id}`| Update existing customer  |
-| DELETE | `/api/customer/{id}`| Delete customer by ID     |
-
----
-### Retrieve Specific inserted values
-
-    curl --location 'http://localhost:8080/api/customerManagement/customer/6'
-    
-### Retrieve all the inserted values
-
-    curl --location 'http://localhost:8080/api/customerManagement/customer
-
-
-### Delete Specific inserted values
-
-    curl --location 'http://localhost:8080/api/customerManagement/customer
-    
-### 🍽️ Restaurant APIs
-
-| Method | Endpoint               | Description                 |
-|--------|------------------------|-----------------------------|
-| GET    | `/api/restaurant`     | Get all restaurants         |
-| POST   | `/api/restaurant`     | Add a restaurant            |
-| PUT    | `/api/restaurant/{id}`| Update restaurant           |
-| DELETE | `/api/restaurant/{id}`| Delete restaurant           |
-
----
-
-### 📦 Order APIs
-
-| Method | Endpoint         | Description               |
-|--------|------------------|---------------------------|
-| GET    | `/api/order`    | Get all orders            |
-| POST   | `/api/order`    | Place new order           |
-| PUT    | `/api/order`    | Update order details      |
-| DELETE | `/api/order `   | Delete order by ID        |
-
----
-
-### 🛵 Delivery Agent APIs
-
-| Method | Endpoint                | Description                |
-|--------|-------------------------|----------------------------|
-| GET    | `/api/deliveryAgentagent`           | Get all delivery agents    |
-| POST   | `/api/agent`           | Add a delivery agent       |
-| PUT    | `/api/deliveryAgent/{id}`      | Update agent details       |
-| DELETE | `/api/deliveryAgent/{id}`      | Delete agent by ID         |
-
----
 ## Postman Collection
 
 You can test the REST APIs using Postman:

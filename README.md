@@ -1,13 +1,3 @@
-<!--<p align="center">-->
-<!--   <img src="https://github.com/user-attachments/assets/771cf93e-c2fd-4f65-a141-5e54b74a14ae"  -->
-<!--        alt="FoodEase Logo"  -->
-<!--        width="300px" -->
-<!--        style="height: auto; display: block; margin: 0 auto;"> -->
-<!-- </p> -->
-<!-- <p align="center"> -->
-<!--   <img src="https://github.com/user-attachments/assets/51d95660-90d0-42cf-bbda-2232c0d5419f" alt="Project Screenshot" width="100"/> -->
-<!-- </p> -->
-
 [![Twitter](https://img.shields.io/twitter/follow/shreyamahalle?style=social)](https://x.com/shreyamahalle)
 [![License](https://img.shields.io/badge/License-Apache%202.0-green.svg)](https://opensource.org/licenses/Apache-2.0)
 ![GitHub language count](https://img.shields.io/github/languages/count/shreyamahalle/spring-boot-foodease-rest-api-filter-interceptor)

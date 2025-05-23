@@ -101,6 +101,7 @@ It mimics real-world operations like customer registration, restaurant assignmen
 tracking — all managed using a clean layered architecture 
 ```bash
 Controller → Service → Repository → Model → DB
+
 ```
 ```
 graph LR

@@ -95,7 +95,7 @@ The Spring Booking Management System provides a modular approach to managing:
 - Review
 - BookingTable
 - Payment
-- Orderstatus
+- OrderStatus
 - Request Filtering
 - **API Interception**
 - **Scheduled Jobs**
@@ -161,7 +161,7 @@ Before you begin, ensure you have the following:
 
 ## 1. **Clone the Repository:**
 
-   ```bash
+```bash
    git clone (https://github.com/shreyamahalle/foodease-food-order-booking-system.git)
 ```
 
@@ -197,9 +197,7 @@ Before you begin, ensure you have the following:
 ## 6. **Configure Your MySQL Connection:**
 
 - In your project configuration (application.properties), set the MySQL database connection details.
-
 - Example application.properties:
-
 - spring.datasource.url=jdbc:mysql://localhost:3306/booking_management
 - spring.datasource.username=root
 - spring.datasource.password=your_password
@@ -208,14 +206,13 @@ Before you begin, ensure you have the following:
 ## 7. **Compile and Run the Application:**
 
 - Locate Main.java in your IDE.
-  
 - Run the file to launch the application.
 
 ## 8. **Build the project:**
 
-   ```bash
+```bash
    mvn clean install
-   ```
+ ```
 ## API Endpoints (CRUD)
 
 ### 🧍 Customer APIs
@@ -388,7 +385,7 @@ src/
 6. **Review**
 7. **BookingTable**
 8. **Payment**
-9. **Orderstatus**
+9. **OrderStatus**
 10. **Review**
 11. **MenuItem**
 12. **Notification**
@@ -420,7 +417,7 @@ src/
 8. Payment
    Handles payment processing for orders and bookings, ensuring successful transactions.
 
-9. Orderstatus
+9. OrderStatus
    Tracks and updates the status of customer orders, such as pending, delivered, or cancelled.
 ## Database Schema (POJO Classes)
 

@@ -12,6 +12,7 @@ import java.sql.SQLException;
 public class SpringBootBookingManagementProjectApplication {
 
     public static void main(String[] args) throws InvalideCustomerIDException, SQLException {
+
         SpringApplication.run(SpringBootBookingManagementProjectApplication.class, args);
     }
 }

@@ -109,6 +109,7 @@ graph LR
     A --> C(Payment Gateways)
     A --> D(Logistics Providers)
     A --> E(Marketing Platforms)
+
 ```
 
 ## Features

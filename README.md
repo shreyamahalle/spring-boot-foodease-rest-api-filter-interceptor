@@ -1,13 +1,3 @@
-<!--<p align="center">-->
-<!--   <img src="https://github.com/user-attachments/assets/771cf93e-c2fd-4f65-a141-5e54b74a14ae"  -->
-<!--        alt="FoodEase Logo"  -->
-<!--        width="300px" -->
-<!--        style="height: auto; display: block; margin: 0 auto;"> -->
-<!-- </p> -->
-<!-- <p align="center"> -->
-<!--   <img src="https://github.com/user-attachments/assets/51d95660-90d0-42cf-bbda-2232c0d5419f" alt="Project Screenshot" width="100"/> -->
-<!-- </p> -->
-
 [![Twitter](https://img.shields.io/twitter/follow/shreyamahalle?style=social)](https://x.com/shreyamahalle)
 [![License](https://img.shields.io/badge/License-Apache%202.0-green.svg)](https://opensource.org/licenses/Apache-2.0)
 ![GitHub language count](https://img.shields.io/github/languages/count/shreyamahalle/spring-boot-foodease-rest-api-filter-interceptor)
@@ -15,7 +5,10 @@
 ![GitHub issues](https://img.shields.io/github/issues/shreyamahalle/spring-boot-foodease-rest-api-filter-interceptor)
 ![GitHub closed pull requests](https://img.shields.io/github/issues-pr-closed/shreyamahalle/spring-boot-foodease-rest-api-filter-interceptor)
 ![GitHub followers](https://img.shields.io/github/followers/shreyamahalle?style=social)
-
+![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.4.6-brightgreen.svg)
+[![Developed with IntelliJ IDEA](https://img.shields.io/badge/IntelliJ%20IDEA-Supported-blue.svg)](https://www.jetbrains.com/idea/)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](https://linkedin.com/in/shreyamahalle) &nbsp;&nbsp;
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/shreyamahalle) &nbsp;&nbsp;
 
 <table align="center">
   <tr>
@@ -42,9 +35,11 @@
 - [Postman Collection](#Postman-Collection)
 - [Module Responsibilities](#Module-Responsibilities)
 - [Spring Annotations](#Spring-Annotations)
-- [Code Structure ](#Code-Structure )
+- [System Functionality](#System-Functionality)
+- [Code Structure ](#Code-Structure)
 - [Database Schema (POJO Classes)](#Database-Schema-(POJO-Classes))
 - [Class Diagram](#Class-Diagram)
+- [API Endpoints (CURL Commands)](#API-Endpoints-(CURL-Commands))
 - [Contact](#contact)
 - [Best Practices Followed](#Best-Practices-Followed)
 - [Future Scope](#Future-Scope)
@@ -82,7 +77,8 @@
 
 ## Project Overview
 
-The Spring Booking Management System provides a modular approach to managing:
+The Spring Food Order & Booking Management System provides a modular approach to managing:
+**FoodEase** is a comprehensive Spring Boot-based solution that digitalizes end-to-end food ordering operations, serving three key stakeholders:
 
 - Customers
 - Restaurants
@@ -102,9 +98,18 @@ The Spring Booking Management System provides a modular approach to managing:
 - **Email Notifications**
 
 It mimics real-world operations like customer registration, restaurant assignment, order placing, and delivery
-tracking — all managed using a clean layered architecture (Controller → Service → Repository).
+tracking — all managed using a clean layered architecture 
+```bash
+Controller → Service → Repository → Model → DB
 
----
+```
+```
+graph LR
+    A[FoodEase] --> B(POS Systems)
+    A --> C(Payment Gateways)
+    A --> D(Logistics Providers)
+    A --> E(Marketing Platforms)
+```
 
 ## Features
 
@@ -118,8 +123,6 @@ tracking — all managed using a clean layered architecture (Controller → Serv
 -  Easy-to-Follow Structure: Well-documented, clean code for learning and demonstration.
 -  Layered Architecture: Clean separation of concerns.
 -  REST API: Full CRUD functionality exposed via REST.
-
----
 
 ## Technology Stack
 
@@ -157,6 +160,43 @@ Before you begin, ensure you have the following:
 - **IDE**: Use IntelliJ IDEA, Eclipse, or any Java IDE you're comfortable with.
 - **Git (optional)**: For version control and easier collaboration.
 
+  ## 🛠️ Prerequisites
+
+Before deploying FoodEase, ensure your development environment meets these requirements:
+
+### Core Requirements
+| Component           | Version       | Installation Guide                      | Verification Command          |
+|---------------------|---------------|-----------------------------------------|-------------------------------|
+| Java JDK            | 21+           | [Oracle JDK](https://www.oracle.com/java/technologies/downloads/) or [OpenJDK](https://openjdk.org/install/) | `java -version` |
+| Apache Maven        | 3.9.x         | [Maven Install Guide](https://maven.apache.org/install.html) | `mvn -v` |
+| MySQL Server        | 8.0+          | [MySQL Downloads](https://dev.mysql.com/downloads/) | `mysql --version` |
+| Docker Engine       | 24.0+         | [Docker Installation](https://docs.docker.com/engine/install/) | `docker --version` |
+
+### Optional Tools
+| Tool                | Recommended For                      | Installation Link                      |
+|---------------------|--------------------------------------|----------------------------------------|
+| IntelliJ IDEA       | Advanced Development                | [Download IDEA](https://www.jetbrains.com/idea/download/) |
+| Postman            | API Testing                         | [Get Postman](https://www.postman.com/downloads/) |
+| Kubernetes CLI     | Production Deployment               | [Install kubectl](https://kubernetes.io/docs/tasks/tools/) |
+
+### Environment Verification
+```bash
+# Verify Java installation
+java -version
+# Should show: java version "21.x.x"
+
+# Verify Maven
+mvn --version
+# Should show: Apache Maven 3.9.x
+
+# Verify Docker
+docker compose version
+# Should show: Docker Compose version v2.x.x
+
+# Verify MySQL
+mysql --version
+# Should show: mysql Ver 8.0.x for Linux/macOS
+
 ## Steps to Get Started
 
 ## 1. **Clone the Repository:**
@@ -168,7 +208,7 @@ Before you begin, ensure you have the following:
 ## 2. **Navigate to the Project Directory:**
 
 ```bash
- cd spring-boot-booking-management-project
+ cd spring-boot-foodease-rest-api-filter-interceptor
 ```
 
 ## 3. **Open the Project in Your Preferred IDE:**
@@ -195,14 +235,14 @@ Before you begin, ensure you have the following:
 ```
 
 ## 6. **Configure Your MySQL Connection:**
-
+```
 - In your project configuration (application.properties), set the MySQL database connection details.
 - Example application.properties:
 - spring.datasource.url=jdbc:mysql://localhost:3306/booking_management
 - spring.datasource.username=root
 - spring.datasource.password=your_password
 - spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
-
+```
 ## 7. **Compile and Run the Application:**
 
 - Locate Main.java in your IDE.
@@ -212,65 +252,85 @@ Before you begin, ensure you have the following:
 
 ```bash
    mvn clean install
+<<<<<<< HEAD
  ```
 ## API Endpoints (CRUD)
+=======
+   ```
+>>>>>>> c18631b05f568d7defc27944023d7706f757c6b2
 
-### 🧍 Customer APIs
-
-| Method | Endpoint             | Description               |
-|--------|----------------------|---------------------------|
-| GET    | `/api/customer`     | Get all customers         |
-| GET    | `/api/customer/{id}`| Get customer by ID        |
-| POST   | `/api/customer`     | Add a new customer        |
-| PUT    | `/api/customer/{id}`| Update existing customer  |
-| DELETE | `/api/customer/{id}`| Delete customer by ID     |
-
----
-### Retrieve Specific inserted values
-
-    curl --location 'http://localhost:8080/api/customerManagement/customer/6'
-    
-### Retrieve all the inserted values
-
-    curl --location 'http://localhost:8080/api/customerManagement/customer
+## API Endpoints (CURL Commands)
 
 
-### Delete Specific inserted values
-
-    curl --location 'http://localhost:8080/api/customerManagement/customer
-    
-### 🍽️ Restaurant APIs
-
-| Method | Endpoint               | Description                 |
-|--------|------------------------|-----------------------------|
-| GET    | `/api/restaurant`     | Get all restaurants         |
-| POST   | `/api/restaurant`     | Add a restaurant            |
-| PUT    | `/api/restaurant/{id}`| Update restaurant           |
-| DELETE | `/api/restaurant/{id}`| Delete restaurant           |
-
----
-
-### 📦 Order APIs
-
-| Method | Endpoint         | Description               |
-|--------|------------------|---------------------------|
-| GET    | `/api/order`    | Get all orders            |
-| POST   | `/api/order`    | Place new order           |
-| PUT    | `/api/order`    | Update order details      |
-| DELETE | `/api/order `   | Delete order by ID        |
-
----
-
-### 🛵 Delivery Agent APIs
-
-| Method | Endpoint                | Description                |
-|--------|-------------------------|----------------------------|
-| GET    | `/api/deliveryAgentagent`           | Get all delivery agents    |
-| POST   | `/api/agent`           | Add a delivery agent       |
-| PUT    | `/api/deliveryAgent/{id}`      | Update agent details       |
-| DELETE | `/api/deliveryAgent/{id}`      | Delete agent by ID         |
-
----
+## Get All Customers
+```bash
+curl --location 'http://localhost:8080/api/customerManagement/customer' \
+--header 'Content-Type: application/json'
+```
+## Get Customer by ID
+```bash
+curl --location 'http://localhost:8080/api/customerManagement/customer/6' \
+--header 'Content-Type: application/json'
+```
+## Update Customer
+```bash
+curl -X PUT 'http://localhost:8080/api/customer/6' \
+-H 'Content-Type: application/json' \
+-H 'Authorization: Bearer YOUR_ACCESS_TOKEN' \
+-d '{
+  "name": "John Doe Updated",
+  "area": "Bandra"
+}'
+```
+## Delete Customer
+```bash
+curl --location --request DELETE 'http://localhost:8080/customers' \
+--header 'Content-Type: application/json' \
+--data '{
+  "id": 1,
+  "name": "Shreya",
+  "city": "Pune",
+  "mobileNo": 9876543210,
+  "age": 25
+}
+'
+```
+## Restaurant Management
+## Create Restaurant
+```bash
+curl -X POST 'http://localhost:8080/api/restaurant' \
+-H 'Content-Type: application/json' \
+-d '{
+  "name": "Pizza Palace",
+  "city": "Mumbai",
+  "area": "Bandra",
+  "cuisineType": "Italian"
+}'
+```
+## Get Restaurant Menu
+```bash
+curl -X GET 'http://localhost:8080/api/restaurant/1/menu' \
+-H 'Accept: application/json'
+```
+## Order Management
+## Place Order
+```bash
+curl -X POST 'http://localhost:8080/api/order' \
+-H 'Content-Type: application/json' \
+-H 'Authorization: Bearer YOUR_ACCESS_TOKEN' \
+-d '{
+  "customerId": 1,
+  "restaurantId": 2,
+  "items": [
+    {
+      "menuItemId": 5,
+      "quantity": 2,
+      "specialInstructions": "No onions"
+    }
+  ],
+  "couponCode": "SAVE10"
+}' 
+```
 ## Postman Collection
 
 You can test the REST APIs using Postman:
@@ -304,13 +364,39 @@ POST /api/orders
   "deliveryAgentId": 3
 }
 ```
+
 ## Module Responsibilities
+```properties
+This project includes full CRUD and business logic support for the following modules:
 
-- **Customer**: Handles user registration, city/area resolution, and personalization.
-- **Restaurant**: CRUD operations and geo-based filtering logic.
-- **Order**: Links Customers to Restaurants; encapsulates logistics and contact info.
-- **Delivery Agent**: Assignments and delivery lifecycle management.
+1 Customer – Registration, login, update profile
 
+2 DeliveryAgent – Assign orders, update status
+
+3 Order – Place, view, update, cancel orders
+
+4 Restaurant – Add/view restaurant info and menus
+
+5 Feedback – Customer feedback on orders or service
+
+6 Review – Star ratings and reviews for restaurants
+
+7 BookingTable – Reserve tables at restaurants
+
+8 Payment – Payment processing and tracking
+
+9 OrderStatus – Track real-time status of orders
+
+10 MenuItem – Add/update menu items
+
+11 Notification – Real-time or scheduled alerts
+
+12 Coupon – Apply discount codes to orders
+
+13 Cart Item – Add/remove items to cart before checkout.
+
+
+```
 ## Spring Annotations
 
 - Overview of Spring Annotations
@@ -390,6 +476,45 @@ src/
 11. **MenuItem**
 12. **Notification**
 13. **Coupon**
+
+
+## System Functionality
+
+### Core Modules
+
+| Module               | Key Features                                                                 | Technical Implementation                          |
+|----------------------|-----------------------------------------------------------------------------|---------------------------------------------------|
+| **Customer**         | - JWT Authentication<br>- Profile Management<br>- Order History            | Spring Security, OAuth2, Redis Cache              |
+| **DeliveryAgent**    | - Real-time Tracking<br>- Capacity Management<br>- Route Optimization      | WebSocket, Google Maps API, Kafka Events          |
+| **Order**           | - State Machine Workflow<br>- Payment Integration<br>- SAGA Pattern        | Spring State Machine, Stripe API, Axon Framework  |
+| **Restaurant**      | - Menu Management<br>- Inventory Control<br>- Service Area Configuration   | Spring Data JPA, Geospatial Queries               |
+
+### Supporting Modules
+
+| Module               | Functionality                                                             | Technologies Used                              |
+|----------------------|---------------------------------------------------------------------------|-----------------------------------------------|
+| **Payment**         | - Multi-gateway Support<br>- Idempotent Transactions<br>- Refund Handling | Stripe SDK, Idempotency Keys, Circuit Breaker |
+| **MenuItem**        | - Dynamic Pricing<br>- Dietary Tagging<br>- Availability Scheduling       | Elasticsearch, Time-based Cache               |
+| **Notification**    | - Multi-channel (SMS/Email/Push)<br>- Template Engine<br>- Read Receipts | Twilio, SendGrid, Firebase Cloud Messaging    |
+
+### Advanced Features
+
+```mermaid
+sequenceDiagram
+    Customer->>+OrderService: Place Order
+    OrderService->>+PaymentService: Process Payment
+    PaymentService-->>-OrderService: Confirmation
+    OrderService->>+RestaurantService: Validate Order
+    RestaurantService-->>-OrderService: Acknowledgement
+    OrderService->>+DeliveryService: Assign Agent
+    DeliveryService-->>-Customer: Tracking Link
+
+```
+
+
+
+
+    
 
 ## **🔧 Core Functionality**
 
@@ -674,10 +799,46 @@ class OrderRepository {
 
 ---
 
-## Author
 
-Shreya Mahalle  
-[GitHub](https://github.com/shreyamahalle) | [LinkedIn](https://linkedin.com/in/shreyamahalle)
+## 🌐 Connect With Me
 
----
+<div align="center" style="margin: 20px 0;">
+  <!-- GitHub -->
+  <a href="https://github.com/shreyamahalle" style="margin: 0 10px;">
+    <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" height="28"/>
+  </a>
+  
+  <!-- LinkedIn (with your corrected link) -->
+  <a href="https://www.linkedin.com/in/shreya-mahalle-254657176/?originalSubdomain=in" style="margin: 0 10px;">
+    <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" height="28"/>
+  </a>
+  
+  <!-- Twitter -->
+  <a href="https://twitter.com/shreyamahalle" style="margin: 0 10px;">
+    <img src="https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white" alt="Twitter" height="28"/>
+  </a>
+  
+  <!-- Email -->
+  <a href="mailto:shreyamahalle8@example.com" style="margin: 0 10px;">
+    <img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" height="28"/>
+  </a>
+</div>
+
+<div align="center" style="margin-top: 15px;">
+  <a href="https://shreyamahalle.github.io" style="text-decoration: none;">
+    <img src="https://img.shields.io/badge/Portfolio-4285F4?style=for-the-badge&logo=google-chrome&logoColor=white" alt="Portfolio" height="28"/>
+  </a>
+</div>
+
+<div align="center"> <sub>Built with ❤︎ by Shreya Mahalle</sub> </div> 
+
+<div align="center">
+  <sub>Made with ❤︎ by <strong>Shreya Mahalle</strong> | Powered by Java & Spring Boot ☕🌱</sub>  
+  <br/>
+  <sub>Let's connect on 
+    <a href="https://github.com/shreyamahalle">GitHub</a> &bull; 
+    <a href="https://linkedin.com/in/shreyamahalle">LinkedIn</a>
+  </sub>
+</div>
+
 

@@ -109,6 +109,7 @@ graph LR
     A --> C(Payment Gateways)
     A --> D(Logistics Providers)
     A --> E(Marketing Platforms)
+
 ```
 
 ## Features
@@ -831,6 +832,7 @@ class OrderRepository {
 </div>
 
 <div align="center"> <sub>Built with ❤︎ by Shreya Mahalle</sub> </div> 
+
 
 <div align="center">
   <sub>Made with ❤︎ by <strong>Shreya Mahalle</strong> | Powered by Java & Spring Boot ☕🌱</sub>  

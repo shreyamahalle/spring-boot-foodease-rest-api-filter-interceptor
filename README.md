@@ -256,22 +256,21 @@ mysql --version
    mvn clean install
  ```
 ## API Endpoints (CRUD)
-=======
- ```
+
 
 ## API Endpoints (CURL Commands)
 
-
 ## Get All Customers
 ```bash
-curl --location 'http://localhost:8080/api/customerManagement/customer' \
---header 'Content-Type: application/json'
+      curl location 'http://localhost:8080/api/customerManagement/customer' \
+      header 'Content-Type: application/json'
 ```
 ## Get Customer by ID
 ```bash
-curl --location 'http://localhost:8080/api/customerManagement/customer/6' \
---header 'Content-Type: application/json'
+     curl --location 'http://localhost:8080/api/customerManagement/customer/6' \
+     header 'Content-Type: application/json'
 ```
+
 ## Update Customer
 ```bash
 curl -X PUT 'http://localhost:8080/api/customer/6' \

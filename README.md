@@ -187,12 +187,11 @@ Before deploying FoodEase, ensure your development environment meets these requi
 ```bash
 java -version
 Should show: java version "21.x.x"
-=======
+
 ```bash
 Verify Java installation
 java -version
 Should show: java version "21"
->>>>>>> 6a63e6a24e872763f402402a7a2dfe53d3b0d474
 
 Verify Maven
 mvn --version
@@ -206,11 +205,8 @@ Verify MySQL
 mysql --version
 Should show: mysql Ver 8.0.x for Linux/macOS
 
-<<<<<<< HEAD
 Steps to Get Started
-=======
 ## Steps to Get Started
->>>>>>> 6a63e6a24e872763f402402a7a2dfe53d3b0d474
 ```
 
 1. **Clone the Repository:**
@@ -268,16 +264,11 @@ Steps to Get Started
    mvn clean install
  ```
 ## API Endpoints (CRUD)
-<<<<<<< HEAD
-=======
-
->>>>>>> 6a63e6a24e872763f402402a7a2dfe53d3b0d474
 
 ## API Endpoints (CURL Commands)
 
 ## Get All Customers
 ```bash
-<<<<<<< HEAD
    curl --location 'http://localhost:8080/api/customerManagement/customer' \
    --header 'Content-Type: application/json'
 ```
@@ -285,7 +276,7 @@ Steps to Get Started
 ```bash
    curl --location 'http://localhost:8080/api/customerManagement/customer/6' \
    --header 'Content-Type: application/json'
-=======
+
       curl location 'http://localhost:8080/api/customerManagement/customer' \
       header 'Content-Type: application/json'
 ```
@@ -293,7 +284,6 @@ Steps to Get Started
 ```bash
      curl --location 'http://localhost:8080/api/customerManagement/customer/6' \
      header 'Content-Type: application/json'
->>>>>>> 6a63e6a24e872763f402402a7a2dfe53d3b0d474
 ```
 
 ## Update Customer

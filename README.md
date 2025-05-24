@@ -182,9 +182,9 @@ Before deploying FoodEase, ensure your development environment meets these requi
 
 ### Environment Verification
 ```bash
-# Verify Java installation
+Verify Java installation
 java -version
-# Should show: java version "21.x.x"
+Should show: java version "21.x.x"
 
 # Verify Maven
 mvn --version

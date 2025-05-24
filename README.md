@@ -161,7 +161,7 @@ Before you begin, ensure you have the following:
 - **IDE**: Use IntelliJ IDEA, Eclipse, or any Java IDE you're comfortable with.
 - **Git (optional)**: For version control and easier collaboration.
 
-  ## 🛠️ Prerequisites
+## 🛠️ Prerequisites
 
 Before deploying FoodEase, ensure your development environment meets these requirements:
 

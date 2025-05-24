@@ -199,6 +199,7 @@ mysql --version
 # Should show: mysql Ver 8.0.x for Linux/macOS
 
 ## Steps to Get Started
+```
 
 ## 1. **Clone the Repository:**
 
@@ -253,12 +254,10 @@ mysql --version
 
 ```bash
    mvn clean install
-<<<<<<< HEAD
  ```
 ## API Endpoints (CRUD)
 =======
-   ```
->>>>>>> c18631b05f568d7defc27944023d7706f757c6b2
+ ```
 
 ## API Endpoints (CURL Commands)
 

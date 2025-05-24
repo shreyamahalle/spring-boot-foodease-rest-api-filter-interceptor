@@ -184,11 +184,11 @@ Before deploying FoodEase, ensure your development environment meets these requi
 ```bash
 Verify Java installation
 java -version
-Should show: java version "21.x.x"
+Should show: java version "21"
 
-# Verify Maven
+Verify Maven
 mvn --version
-# Should show: Apache Maven 3.9.x
+Should show: Apache Maven 3.9.x
 
 # Verify Docker
 docker compose version

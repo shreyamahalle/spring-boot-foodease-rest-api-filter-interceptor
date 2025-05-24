@@ -181,7 +181,6 @@ Before deploying FoodEase, ensure your development environment meets these requi
 | Kubernetes CLI     | Production Deployment               | [Install kubectl](https://kubernetes.io/docs/tasks/tools/) |
 
 ### Environment Verification
-<<<<<<< HEAD
 
 # Verify Java installation
 ```bash

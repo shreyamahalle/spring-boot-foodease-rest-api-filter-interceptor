@@ -181,26 +181,28 @@ Before deploying FoodEase, ensure your development environment meets these requi
 | Kubernetes CLI     | Production Deployment               | [Install kubectl](https://kubernetes.io/docs/tasks/tools/) |
 
 ### Environment Verification
-```bash
+
 # Verify Java installation
+```bash
 java -version
-# Should show: java version "21.x.x"
+Should show: java version "21.x.x"
 
-# Verify Maven
+Verify Maven
 mvn --version
-# Should show: Apache Maven 3.9.x
+Should show: Apache Maven 3.9.x
 
-# Verify Docker
+Verify Docker
 docker compose version
-# Should show: Docker Compose version v2.x.x
+Should show: Docker Compose version v2.x.x
 
-# Verify MySQL
+Verify MySQL
 mysql --version
-# Should show: mysql Ver 8.0.x for Linux/macOS
+Should show: mysql Ver 8.0.x for Linux/macOS
 
-## Steps to Get Started
+Steps to Get Started
+```
 
-## 1. **Clone the Repository:**
+1. **Clone the Repository:**
 
 ```bash
    git clone (https://github.com/shreyamahalle/foodease-food-order-booking-system.git)
@@ -209,29 +211,29 @@ mysql --version
 ## 2. **Navigate to the Project Directory:**
 
 ```bash
- cd spring-boot-foodease-rest-api-filter-interceptor
+  cd spring-boot-foodease-rest-api-filter-interceptor
 ```
 
 ## 3. **Open the Project in Your Preferred IDE:**
 
 ```bash
- Launch your IDE (IntelliJ, Eclipse, etc.), and open the cloned repository.
+   Launch your IDE (IntelliJ, Eclipse, etc.), and open the cloned repository.
 ```
 
 ## 4. **Set up the MySQL Database:**
 
 ```bash
-  CREATE DATABASE booking_management;
-  USE booking_management;
+   CREATE DATABASE booking_management;
+   USE booking_management;
 ```
 
 ## 5. **MySQL Database Setup**
 - To set up the database and create the necessary tables, run the following SQL queries:
 ```bash
- -Insert sample data into the Customer table
-  INSERT INTO Customer (name, username, mobileNo, city, area)
+    Insert sample data into the Customer table
+    INSERT INTO Customer (name, username, mobileNo, city, area)
   
- -VALUES ('John Doe', 'johndoe123', '123-456-7890', 'New York', 'Manhattan');
+    VALUES ('John Doe', 'johndoe123', '123-456-7890', 'New York', 'Manhattan');
 
 ```
 
@@ -253,25 +255,21 @@ mysql --version
 
 ```bash
    mvn clean install
-<<<<<<< HEAD
  ```
 ## API Endpoints (CRUD)
-=======
-   ```
->>>>>>> c18631b05f568d7defc27944023d7706f757c6b2
 
 ## API Endpoints (CURL Commands)
 
 
 ## Get All Customers
 ```bash
-curl --location 'http://localhost:8080/api/customerManagement/customer' \
---header 'Content-Type: application/json'
+   curl --location 'http://localhost:8080/api/customerManagement/customer' \
+   --header 'Content-Type: application/json'
 ```
 ## Get Customer by ID
 ```bash
-curl --location 'http://localhost:8080/api/customerManagement/customer/6' \
---header 'Content-Type: application/json'
+   curl --location 'http://localhost:8080/api/customerManagement/customer/6' \
+   --header 'Content-Type: application/json'
 ```
 ## Update Customer
 ```bash

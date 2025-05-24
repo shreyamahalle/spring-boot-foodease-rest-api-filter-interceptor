@@ -1,5 +1,4 @@
 package com.shreya.spring.service.impl;
-
 import com.shreya.spring.exception.BookingAddFailedException;
 import com.shreya.spring.exception.IdNotFoundException;
 import com.shreya.spring.exception.NoBookingTablesFoundException;

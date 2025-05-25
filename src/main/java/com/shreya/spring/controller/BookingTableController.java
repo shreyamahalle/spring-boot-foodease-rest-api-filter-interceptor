@@ -65,6 +65,7 @@ public class BookingTableController {
             throw new ResourceNotFoundException("Booking not found with id: " + id);
         }
     }
+
     @DeleteMapping("/table/{id}")
     public ResponseEntity<String> deleteBooking(@PathVariable Long id) {
         log.info("Deleting booking with ID: {}", id);

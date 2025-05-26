@@ -75,5 +75,6 @@ public class BookingTableController {
         } else {
             throw new IdNotFoundException("Booking not found with id: " + id);
         }
+
     }
 }
